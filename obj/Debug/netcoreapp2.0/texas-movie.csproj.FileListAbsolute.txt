@@ -1,0 +1,10 @@
+/home/daniel/texas-movie/bin/Debug/netcoreapp2.0/texas-movie.deps.json
+/home/daniel/texas-movie/bin/Debug/netcoreapp2.0/texas-movie.runtimeconfig.json
+/home/daniel/texas-movie/bin/Debug/netcoreapp2.0/texas-movie.runtimeconfig.dev.json
+/home/daniel/texas-movie/bin/Debug/netcoreapp2.0/texas-movie.dll
+/home/daniel/texas-movie/bin/Debug/netcoreapp2.0/texas-movie.pdb
+/home/daniel/texas-movie/obj/Debug/netcoreapp2.0/texas-movie.csproj.CoreCompileInputs.cache
+/home/daniel/texas-movie/obj/Debug/netcoreapp2.0/texas-movie.AssemblyInfoInputs.cache
+/home/daniel/texas-movie/obj/Debug/netcoreapp2.0/texas-movie.AssemblyInfo.cs
+/home/daniel/texas-movie/obj/Debug/netcoreapp2.0/texas-movie.dll
+/home/daniel/texas-movie/obj/Debug/netcoreapp2.0/texas-movie.pdb
