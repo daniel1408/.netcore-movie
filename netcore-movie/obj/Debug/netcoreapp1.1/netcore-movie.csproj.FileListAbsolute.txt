@@ -1,0 +1,9 @@
+c:\users\daniel.costa\documents\visual studio 2017\Projects\netcore-movie\netcore-movie\bin\Debug\netcoreapp1.1\netcore-movie.deps.json
+c:\users\daniel.costa\documents\visual studio 2017\Projects\netcore-movie\netcore-movie\bin\Debug\netcoreapp1.1\netcore-movie.runtimeconfig.json
+c:\users\daniel.costa\documents\visual studio 2017\Projects\netcore-movie\netcore-movie\bin\Debug\netcoreapp1.1\netcore-movie.runtimeconfig.dev.json
+c:\users\daniel.costa\documents\visual studio 2017\Projects\netcore-movie\netcore-movie\bin\Debug\netcoreapp1.1\netcore-movie.dll
+c:\users\daniel.costa\documents\visual studio 2017\Projects\netcore-movie\netcore-movie\bin\Debug\netcoreapp1.1\netcore-movie.pdb
+c:\users\daniel.costa\documents\visual studio 2017\Projects\netcore-movie\netcore-movie\obj\Debug\netcoreapp1.1\netcore-movie.csprojResolveAssemblyReference.cache
+c:\users\daniel.costa\documents\visual studio 2017\Projects\netcore-movie\netcore-movie\obj\Debug\netcoreapp1.1\netcore-movie.AssemblyInfo.cs
+c:\users\daniel.costa\documents\visual studio 2017\Projects\netcore-movie\netcore-movie\obj\Debug\netcoreapp1.1\netcore-movie.dll
+c:\users\daniel.costa\documents\visual studio 2017\Projects\netcore-movie\netcore-movie\obj\Debug\netcoreapp1.1\netcore-movie.pdb

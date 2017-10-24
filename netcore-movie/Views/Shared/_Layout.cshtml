@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta charset="utf-8" />
+    
+    <!-- <title>@ViewData["Title"] - Movies</title> -->
+    <title>Movies</title>
+
+    <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
+            asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+</head>
+
+<body>
+    <div id="menu">
+        <ul>
+            <img src="https://image.ibb.co/fB5Nd6/1508726410823205.jpg" width="150px">
+
+            <li><a asp-area="" asp-controller="Filmes" asp-action="Filmes">Filmes</a></li>
+            <li><a asp-area="" asp-controller="Series" asp-action="Listar">Series</a></li>
+            <li><a asp-area="" asp-controller="Cast" asp-action="Cast">Cast</a></li>
+        
+            <li>@Html.ActionLink("HOME", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })</li>
+        </ul>
+
+    </div><!--Fim MENU-->
+
+     
+
+    <footer>
+        <h3><b>Sistema de Gerenciamento de Filmes</b></h3>
+        <p>&copy; @DateTime.Now.Year - daniel-costa@ufu.br</p>
+    </footer>
+    @RenderBody()
+    
+
+</body>
+</html>
+
+
