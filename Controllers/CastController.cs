@@ -8,9 +8,9 @@ using texas_movie.Models;
 
 namespace texas_movie.Controllers
 {
-    public class HomeController : Controller
+    public class CastController : Controller
     {
-        public IActionResult Index()
+        public IActionResult Cast()
         {
             return View();
         }

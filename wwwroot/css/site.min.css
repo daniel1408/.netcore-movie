@@ -130,3 +130,8 @@ input[type=button]{
     margin: 0 auto;
     width: 75%;
 }
+
+.ReaderTable{
+	background-color: #152324;
+	color: white;
+}
