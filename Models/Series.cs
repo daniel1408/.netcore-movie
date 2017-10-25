@@ -6,6 +6,7 @@ namespace texas_movie.Models
     {
         public int Id {get; set;}
         public string Nome {get; set;}
-        public int Nota {get; set;}
+        public string Categoria {get; set;}
+        public float Nota {get; set;}
     }
 }

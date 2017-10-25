@@ -2,64 +2,43 @@ body{
 	background-color:#F8F8F8
 }
 
-footer {
+.footer {
     background-color: rgb(255, 255, 255);
     box-shadow: 1px 1px 2px #000000;
     text-align: center;
-    height: 10%;
-    padding: 1%;
+}
 
-    position: absolute;
-    bottom: 0px;
-    width: 100%;
-
+.card{
+	box-shadow: 1px 1px 2px #000000;
+	padding: 5px;
+	background-color: rgb(255, 255, 255);
+}
+.card-img-top{
+	width: 100%;
 }
 
 
-
-/* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
-}
-
-#menu{
-	
+#menu{	
 	background-color: #152324;
 	text-align: center;	
 	box-shadow: 1px 1px 2px #000000;    
 }
-
 #menu ul{
 	padding: 7px;
 	
 }
-
 #menu ul li{
 	list-style:none;
 	display:inline;
 	padding-right: 5%;
 }
-
 #menu ul li a{
 	text-decoration:none; 
 	color: rgb(255, 255, 255);
 }
-
 #menu ul li a:hover{
 	padding:auto;
 	font-weight: bold;
-}
-
-#botoes{
-    display:inline-flex;
 }
 
 
@@ -70,7 +49,6 @@ textarea {
 	overflow:hidden;
 	margin-top: 20px;
 }
-
 .slider ul{
 	
 	display: flex;
@@ -81,15 +59,12 @@ textarea {
 	animation-duration: 35s;
 	animation-iteration-count: infinite;
 }
-
 .slider li{
 	width: 100%;
 	list-style: none;
 }
-
 .slider img{
 	width: 100%;
-
 }
 
 @keyframes cambio{
@@ -112,38 +87,17 @@ textarea {
 	}
 }
 
-input[type=text]{     	
-
-	border-radius:5px;
-        background: #ffffff;
-	width:470px;
-	height:32px;
-}
-input[type=text]:hover, textarea:hover{ 
-	background:black;
-	color: white;
-}
-
-input[type=submit]{
-        background:black;
-        color:#ffffff;
-}
-input[type=button]{
-        background:black;
-        color:#ffffff;
-}
-
-
-.error404{
-    margin: 0 auto;
-    width: 75%;
-}
-
-.ReaderTable{
-	background-color: #152324;
-	color: white;
-}
 
 .Buttons{
-    margin: 2% 0;
+    margin: 1% 0;
+}
+
+.CardButtons{
+	width: 50%;
+	margin: 0 auto;
+}
+
+table {
+	background:white;
+	box-shadow: 1px 1px 2px #000000;
 }

@@ -20,20 +20,20 @@
             <li><a asp-area="" asp-controller="Filmes" asp-action="Filmes">Filmes</a></li>
             <li><a asp-area="" asp-controller="Series" asp-action="Listar">Series</a></li>
             <li><a asp-area="" asp-controller="Cast" asp-action="Cast">Cast</a></li>
+            <li><a asp-area="" asp-controller="Home" asp-action="Ranking">TOP 10</a></li>
         
             <li>@Html.ActionLink("HOME", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })</li>
         </ul>
 
     </div><!--Fim MENU-->
 
+    @RenderBody()
      
 
-    <footer>
-        <h3><b>Sistema de Gerenciamento de Filmes</b></h3>
-        <p>&copy; @DateTime.Now.Year - daniel-costa@ufu.br</p>
-    </footer>
-    @RenderBody()
-    
+    <div class="footer container">
+            <h3><b>Sistema de Gerenciamento de Filmes</b></h3>
+            <p>&copy; @DateTime.Now.Year - daniel-costa@ufu.br</p>
+    </div>
 
 </body>
 </html>

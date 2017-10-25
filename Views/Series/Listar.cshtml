@@ -3,21 +3,22 @@
     ViewBag.Title = "Listar";
 }
 <div class="container">
+    <div class="Buttons">
+        <a asp-area="" asp-controller="Series" asp-action="Criar" class="btn btn-primary" >Cadastrar Série</a>
+    </div>
     <div class="row">
         <div class="col-md-8">            
-            
-            <div class="Buttons">
-                <a asp-area="" asp-controller="Series" asp-action="Criar" class="btn btn-primary" >Cadastrar Série</a>
-            </div>
-
             <div>
                 <table class="table">
-                    <tr>
+                    <tr> 
                         <th>
                             @Html.DisplayNameFor(model => model.Id)
                         </th>
                         <th>
                             @Html.DisplayNameFor(model => model.Nome)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Categoria)
                         </th>
                         <th>
                             @Html.DisplayNameFor(model => model.Nota)
@@ -37,11 +38,14 @@
                                 @Html.DisplayFor(modelItem => item.Nome)
                             </td>
                             <td>
+                                @Html.DisplayFor(modelItem => item.Categoria)
+                            </td>
+                            <td>
                                 @Html.DisplayFor(modelItem => item.Nota)
                             </td>
                             <td>
-                                @Html.ActionLink("Editar", "Editar", new { id = item.Id }) |
-                                @Html.ActionLink("Excluir", "Deletar", new { id = item.Id })
+                                <button type="button" class="btn btn-info">Vista</button>
+                                <button type="button" class="btn btn-info">+ TOP 10</button>
                             </td>
                         </tr>
                     }
@@ -51,12 +55,16 @@
         </div>
 
         <div class="col-md-4">
-            <div class="card" style="width: 20rem;">
+            <div class="card">
                 <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/en/6/69/The_americans_title_card.png">
-                <div class="card-body">
-                    <h4 class="card-title">item.Nome</h4>
+                <div>
+                    <h4>item.Nome</h4>
                     <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a asp-area="" asp-controller="Series" asp-action="Deletar" class="btn btn-danger">Deletar</a>
+                    <div class="CardButtons">
+                        <a asp-area="" asp-controller="Series" asp-action="Deletar" class="btn btn-danger">Deletar</a>
+                        <a asp-area="" asp-controller="Series" asp-action="Editar" class="btn btn-warning">Editar</a>
+                    </div>
+                    
                 </div>
             </div>
         </div>
