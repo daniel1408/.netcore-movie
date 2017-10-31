@@ -1,6 +1,6 @@
 using System;
 
-namespace texas_movie.Models
+namespace movie.Models
 {
     public class Filmes
     {

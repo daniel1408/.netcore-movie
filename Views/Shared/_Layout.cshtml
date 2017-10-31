@@ -1,40 +1,58 @@
 ﻿<!DOCTYPE html>
 <html>
-<head>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>@ViewData["Title"] - movie</title>
+
+        <environment include="Development">
+            <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+            <link rel="stylesheet" href="~/css/site.css" />
+        </environment>
+        <environment exclude="Development">
+            <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
+                asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+                asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+            <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+        </environment>
+    </head>
+    <body>      
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-collapse collapse">
+                <div class="row">
+                    <div class="col-md-8 menu-superior">
+                        <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">HOME</a>
+                        <ul class="nav navbar-nav">
+                            <li><a asp-area="" asp-controller="Filmes" asp-action="Filmes">Filmes</a></li>
+                            <li><a asp-area="" asp-controller="Series" asp-action="Listar">Series</a></li>
+                            <li><a asp-area="" asp-controller="Home" asp-action="Ranking">Top 10</a></li>
+                            <li><a asp-area="" asp-controller="Filmes" asp-action="Filmes">Top 250</a></li>
+                        </ul>
+                    </div>                           
+                    <div class="col-md-4">
+                        <form class="form-inline" id="busca">
+                            <input class="form-control" type="text" placeholder="Buscar" aria-label="Search">
+                            
+                            <span class="texto-login">
+                                <a asp-area="" asp-controller="System" asp-action="Login">Entrar</a>
+                            </span> ou
+                            <span class="texto-login">
+                                <a asp-area="" asp-controller="System" asp-action="Sing">Criar Conta</a>
+                            </span>
+                        </form>
+                    </div>
+                </div>
+                
+            </div>
+        </nav>
+        <div class="container">
+            @RenderBody()
+        </div>
+    </body>
     
-    <meta charset="utf-8" />
-    
-    <!-- <title>@ViewData["Title"] - Movies</title> -->
-    <title>Movies</title>
-
-    <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
-            asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
-</head>
-
-<body>
-    <div id="menu">
-        <ul>
-            <img src="https://image.ibb.co/fB5Nd6/1508726410823205.jpg" width="150px">
-
-            <li><a asp-area="" asp-controller="Filmes" asp-action="Filmes">Filmes</a></li>
-            <li><a asp-area="" asp-controller="Series" asp-action="Listar">Series</a></li>
-            <li><a asp-area="" asp-controller="Cast" asp-action="Cast">Cast</a></li>
-            <li><a asp-area="" asp-controller="Home" asp-action="Ranking">TOP 10</a></li>
-        
-            <li>@Html.ActionLink("HOME", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })</li>
-        </ul>
-
-    </div><!--Fim MENU-->
-
-    @RenderBody()
-     
-
-    <div class="footer container">
-            <h3><b>Sistema de Gerenciamento de Filmes</b></h3>
-            <p>&copy; @DateTime.Now.Year - daniel-costa@ufu.br</p>
-    </div>
-
-</body>
+    <footer>
+        <hr />
+        <h2><b>Movie Management</b></h2>
+        <p>&copy; @DateTime.Now.Year - daniel-costa@ufu.br</p>
+    </footer>
 </html>
-

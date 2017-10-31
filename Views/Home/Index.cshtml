@@ -2,19 +2,46 @@
     ViewBag.Title = "Index";
 }
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="slider">
-                <ul>
-                    <li> <img src="http://www.cate-blanchett.com/news/wp-content/uploads/2017/09/012-e1506007903157-800x400.jpg"> </li>
-                    <li> <img src="https://i.kinja-img.com/gawker-media/image/upload/s--pimg3PPs--/c_scale,fl_progressive,q_80,w_800/uqnhy0oapcnvc5mm74pn.jpg"> </li>
-                    <li> <img src="https://www.monstersandcritics.com/lists/wp-content/uploads/2015/03/the-dark-knight.jpg"> </li>
-                    <li> <img src="https://2.bp.blogspot.com/-NayQtoK1KDk/WNZSlQ4XNoI/AAAAAAAA-N8/uhw2iH95vC0IpzLiBH3NXP6QY9mbx3OQQCLcB/s1600/0.jpg"> </li>
-                </ul>
-            </div><!--Fim Slider-->    
+<div class="container-fluid">
+    <div class="tamanho-janela">
+        <div class="panel-heading">
+            <div class="panel-title text-center">
+                <h2 class="title"><b>Entrar</b></h2>
+                <hr />
+            </div>
+        </div> 
+        <div class="form-group">
+            <label for="username" class="cols-sm-2 control-label">Username</label>
+            <div class="cols-sm-10">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+                    <input type="text" class="form-control" name="username" id="username"  placeholder="Enter your Username"/>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
 
+        <div class="form-group">
+            <label for="password" class="cols-sm-2 control-label">Password</label>
+            <div class="cols-sm-10">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                    <input type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password"/>
+                </div>
+            </div>
+        </div>
+        
+        <div class="pwstrength_viewport_progress"></div>
+        <button type="submit" name="go" class="btn btn-lg btn-primary btn-block">Sign in</button>
+    </div>
+    
+    <div class="slider ">
+        <ul>
+            <li> <img src="http://www.cate-blanchett.com/news/wp-content/uploads/2017/09/012-e1506007903157-800x400.jpg"> </li>
+            <li> <img src="https://i.kinja-img.com/gawker-media/image/upload/s--pimg3PPs--/c_scale,fl_progressive,q_80,w_800/uqnhy0oapcnvc5mm74pn.jpg"> </li>
+            <li> <img src="https://www.monstersandcritics.com/lists/wp-content/uploads/2015/03/the-dark-knight.jpg"> </li>
+            <li> <img src="https://2.bp.blogspot.com/-NayQtoK1KDk/WNZSlQ4XNoI/AAAAAAAA-N8/uhw2iH95vC0IpzLiBH3NXP6QY9mbx3OQQCLcB/s1600/0.jpg"> </li>
+        </ul>
+    </div><!--Fim Slider-->  
+    
+</div>
 

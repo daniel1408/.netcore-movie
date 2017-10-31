@@ -21,16 +21,16 @@
   },
   "targets": {
     ".NETCoreApp,Version=v2.0": {
-      "texas-movie/1.0.0": {
+      "movie/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.All": "2.0.0",
           "Microsoft.NETCore.App": "2.0.0"
         },
         "runtime": {
-          "texas-movie.dll": {}
+          "movie.dll": {}
         },
         "compile": {
-          "texas-movie.dll": {}
+          "movie.dll": {}
         }
       },
       "Libuv/1.10.0": {
@@ -3973,7 +3973,7 @@
     }
   },
   "libraries": {
-    "texas-movie/1.0.0": {
+    "movie/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

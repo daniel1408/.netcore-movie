@@ -12539,11 +12539,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/daniel/Projetos/netcore-movie/texas-movie.csproj",
-      "projectName": "texas-movie",
-      "projectPath": "/home/daniel/Projetos/netcore-movie/texas-movie.csproj",
+      "projectUniqueName": "/home/daniel/Projetos/movie/movie.csproj",
+      "projectName": "movie",
+      "projectPath": "/home/daniel/Projetos/movie/movie.csproj",
       "packagesPath": "/home/daniel/.nuget/packages/",
-      "outputPath": "/home/daniel/Projetos/netcore-movie/obj/",
+      "outputPath": "/home/daniel/Projetos/movie/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/share/dotnet/sdk/NuGetFallbackFolder"
