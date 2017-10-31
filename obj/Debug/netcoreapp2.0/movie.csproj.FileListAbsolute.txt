@@ -8,3 +8,13 @@
 /home/daniel/Projetos/movie/obj/Debug/netcoreapp2.0/movie.AssemblyInfo.cs
 /home/daniel/Projetos/movie/obj/Debug/netcoreapp2.0/movie.dll
 /home/daniel/Projetos/movie/obj/Debug/netcoreapp2.0/movie.pdb
+/home/daniel/Projetos/netcore-movie/bin/Debug/netcoreapp2.0/movie.deps.json
+/home/daniel/Projetos/netcore-movie/bin/Debug/netcoreapp2.0/movie.runtimeconfig.json
+/home/daniel/Projetos/netcore-movie/bin/Debug/netcoreapp2.0/movie.runtimeconfig.dev.json
+/home/daniel/Projetos/netcore-movie/bin/Debug/netcoreapp2.0/movie.dll
+/home/daniel/Projetos/netcore-movie/bin/Debug/netcoreapp2.0/movie.pdb
+/home/daniel/Projetos/netcore-movie/obj/Debug/netcoreapp2.0/movie.csproj.CoreCompileInputs.cache
+/home/daniel/Projetos/netcore-movie/obj/Debug/netcoreapp2.0/movie.AssemblyInfoInputs.cache
+/home/daniel/Projetos/netcore-movie/obj/Debug/netcoreapp2.0/movie.AssemblyInfo.cs
+/home/daniel/Projetos/netcore-movie/obj/Debug/netcoreapp2.0/movie.dll
+/home/daniel/Projetos/netcore-movie/obj/Debug/netcoreapp2.0/movie.pdb
