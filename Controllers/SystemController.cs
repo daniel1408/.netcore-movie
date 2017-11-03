@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using movie.Models;
 
 namespace movie.Controllers
-{
+{   
     public class SystemController : Controller
     {
         public IActionResult Login()

@@ -14,10 +14,5 @@ namespace movie.Controllers
         {
             return View();
         }
-
-        public IActionResult Ranking()
-        {
-            return View();
-        }
     }
 }

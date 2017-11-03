@@ -1,36 +1,4 @@
-/* formatacao-padrao-inicio*/
-body
-{
-        padding-top:50px;padding-bottom:20px;
-        /* background-color: rgb(233, 233, 233); */
-}
-.body-content
-{
-        padding-left:15px;
-        padding-right:15px
-}
-.carousel-caption p
-{
-        font-size:20px;
-        line-height:1.4
-}
-.carousel-inner .item img[src$=".svg"]
-{
-        width:100%
-}
-#qrCode
-{
-        margin:15px
-}
-@media screen and (max-width:767px)
-{
-        .carousel-caption
-        {
-                display:none
-        }
-}
-/* formatacao-padrao-fim*/
-
+body{padding-top:50px;padding-bottom:20px}.body-content{padding-left:15px;padding-right:15px}.carousel-caption p{font-size:20px;line-height:1.4}.carousel-inner .item img[src$=".svg"]{width:100%}#qrCode{margin:15px}@media screen and (max-width:767px){.carousel-caption{display:none}}
 
 
 /*slider-inicio*/
@@ -88,34 +56,58 @@ body
 
 /*slider-fim*/
 
-/*barra-superior-inicio*/
-#busca
-{ 
-        margin-top: 2%;
-        color: rgb(211, 208, 208);
-        width: 100%;
-}
-.texto-login
-{
-        font-size: 20px;
-        color: rgb(255, 255, 255);
-        margin: 1%;
-}
-.texto-login a
-{
-        text-decoration:none; 
-	color: rgb(255, 255, 255);
-}
-.menu-superior
-{
-        font-size: 17px;
-        color: rgb(255, 255, 255);
-}
-/*barra-superior-fim*/
-
 footer{
         text-align: center;
-        background-color: rgb(241, 241, 241);
         padding: 0 0 1% 0;
+}
+
+.card-img-top{
+        width: 100%;
+}
+
+.card{
+        display: inline-block;
+        border: 1px solid rgb(177, 177, 177);
+        border-radius: 3px;
+        margin: 1%;
+        padding: 0.8%;
+        text-align: center;
+        color: black;
+}
+
+
+.tamanho-forms{
+        width: 50%;
+}
+
+a.link {
+        text-decoration: none;
+    }
+
+#appearance-select{
+        height: 40px;
+        background-color: rgb(221, 221, 221);
+        margin-top: 1%;
+}
+
+
+.janela-login-singin{
+        width: 40%;
+}
+
+.campo-busca{
+        margin-top: 0.7%;
+        width: 40%;
+        position: relative;
+        float: left;
+}
+
+.dropdown-menu{
+        background-color: white;
+        border: 1px solid rgb(131, 131, 131);
+}
+.dropdown-menu ul li a{
+        text-decoration: none;
+        color: rgb(0, 0, 0)
 
 }

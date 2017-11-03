@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using movie.Models;
+using System.Text;
 
 namespace movie.Controllers
 {
@@ -12,118 +13,28 @@ namespace movie.Controllers
     {
         public IActionResult Listar()
         {
-            Filmes[] filmes = new Filmes[] 
-            {
-                new Filmes
-                    {
-                        Id = 1,
-                        Nome = "The Americans",
-                        Categoria = "Suspense",
-                        Nota = 8
-                    },
-                new Filmes
-                    {
-                        Id = 2,
-                        Nome = "The Big Bang Theory",
-                        Categoria = "Comédia",
-                        Nota = 8
-                    },
-                new Filmes
-                    {
-                        Id = 3,
-                        Nome = "The Black List",
-                        Categoria = "Ação",
-                        Nota = 8
-                    },
-                new Filmes
-                    {
-                        Id = 4,
-                        Nome = "Chuck",
-                        Categoria = "Espionagem",
-                        Nota = 7
-                    },
-                new Filmes
-                    {
-                        Id = 5,
-                        Nome = "Lethal Weapon",
-                        Categoria = "Ação",
-                        Nota = 8
-                    },
-                new Filmes
-                    {
-                        Id = 6,
-                        Nome = "How i Meet Your Mother",
-                        Categoria = "Comédia",
-                        Nota = 8
-                    },
-                new Filmes
-                    {
-                        Id = 7,
-                        Nome = "Quantic",
-                        Categoria = "Suspense",
-                        Nota = 7
-                    },
-                    new Filmes
-                    {
-                        Id = 1,
-                        Nome = "The Americans",
-                        Categoria = "Suspense",
-                        Nota = 8
-                    },
-                new Filmes
-                    {
-                        Id = 2,
-                        Nome = "The Big Bang Theory",
-                        Categoria = "Comédia",
-                        Nota = 8
-                    },
-                new Filmes
-                    {
-                        Id = 3,
-                        Nome = "The Black List",
-                        Categoria = "Ação",
-                        Nota = 8
-                    },
-                new Filmes
-                    {
-                        Id = 4,
-                        Nome = "Chuck",
-                        Categoria = "Espionagem",
-                        Nota = 7
-                    },
-                new Filmes
-                    {
-                        Id = 5,
-                        Nome = "Lethal Weapon",
-                        Categoria = "Ação",
-                        Nota = 8
-                    },
-                new Filmes
-                    {
-                        Id = 6,
-                        Nome = "How i Meet Your Mother",
-                        Categoria = "Comédia",
-                        Nota = 8
-                    },
-                new Filmes
-                    {
-                        Id = 7,
-                        Nome = "Quantic",
-                        Categoria = "Suspense",
-                        Nota = 7
-                    },
-
-            };
-
+            Service s = new Service();
+            Filmes[] filmes = s.GetFilmes();
             return View(filmes);
         }
 
-        public IActionResult Criar()
+        public IActionResult Detalhes(int Id)
         {
-            return View();
+            Filmes FilmeEspecifico = null;
+            Service s = new Service();
+            Filmes[] filmes = s.GetFilmes();
+            
+            for(int i = 0; i<filmes.Length; i++)
+            {
+                if(filmes[i].Id == Id)
+                {
+                    FilmeEspecifico = filmes[i];
+                }
+            }
+            return View(FilmeEspecifico);
         }
 
-        public IActionResult Editar()
+        public IActionResult Adicionar()
         {
             return View();
         }
@@ -131,6 +42,31 @@ namespace movie.Controllers
         public IActionResult Deletar()
         {
             return View();
+        }
+
+        public IActionResult Ranking()
+        {
+            List<Filmes> FilmesTopTen = new List<Filmes>();
+
+            Service s = new Service();
+            Filmes[] filmes = s.GetFilmes();
+            
+            for(int i = 0; i<filmes.Length; i++)
+            {
+                if(filmes[i].IsTopTen == 1)
+                {
+                    FilmesTopTen.Add(filmes[i]);
+                }
+            }
+            
+            return View(FilmesTopTen);
+        }
+        
+        public IActionResult Ranking250()
+        {
+            Service s = new Service();
+            Filmes[] filmes = s.GetFilmes();
+            return View(filmes);
         }
     }
 }

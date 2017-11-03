@@ -1,9 +1,39 @@
-﻿@{
+﻿@model IEnumerable<movie.Models.Filmes>
+    
+@{
     ViewBag.Title = "Listar";
 }
 
-<div class="container error404">
-    <img src="http://www.readersarticle.com/wp-content/uploads/2014/12/notfound.png">
-    Filmes
-<div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 style="text-align: center"><b>Minha Lista</b></h2>
 
+            <a class="btn btn-danger" asp-controller="Filmes" asp-action="Adicionar"> 
+                Adicionar Filme
+            </a>
+
+            <hr>
+            @foreach (var item in Model) {    
+                <div class="card" style="width: 15rem;">
+                    
+                    <a asp-controller="Filmes" asp-action="Detalhes" asp-route-id="@item.Id"> 
+                        <img class="card-img-top" src="@Html.DisplayFor(modelItem => item.Imagem)" alt="Card image cap">
+                    </a>
+                    
+                    <div class="card-body">
+                        <h5 class="card-title">@Html.DisplayFor(modelItem => item.Nome)</h5>
+                    
+                        <select>
+                            <option>Top 10</option>
+                            <option>Muito bom</option>
+                            <option>Bom</option>
+                            <option>Ruim</option>
+                            <option>Mediano</option>
+                        </select>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

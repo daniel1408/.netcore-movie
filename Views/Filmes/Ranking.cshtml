@@ -1,0 +1,31 @@
+﻿@model IEnumerable<movie.Models.Filmes>
+@{
+    ViewBag.Title = "Ranking";
+}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-8">
+            <h2 style="text-align: center"><b>Meu Top 10</b></h2>
+            <hr>
+            @foreach (var item in Model) {    
+                <div class="card" style="width: 15rem;">
+                    
+                    <a asp-controller="Filmes" asp-action="Detalhes" asp-route-id="@item.Id"> 
+                        <img class="card-img-top    " src="@Html.DisplayFor(modelItem => item.Imagem)" alt="Card image cap">
+                    </a>
+                    
+                    <div class="card-body">
+                        <h5 class="card-title">@Html.DisplayFor(modelItem => item.Nome)</h5>
+                    </div>
+
+                    <button class="btn btn-danger">Retirar</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+
+
+
+

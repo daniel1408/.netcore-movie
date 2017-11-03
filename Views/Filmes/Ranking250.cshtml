@@ -1,0 +1,47 @@
+﻿@model IEnumerable<movie.Models.Filmes>
+@{
+    ViewBag.Title = "Ranking250";
+}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 style="text-align: center"><b>TOP 250 IMDB</b></h2>
+
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Nome)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Nota)
+                    </th>
+                    <th>
+                        
+                    </th>
+                </tr>
+
+                @foreach (var item in Model) {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nota)
+                    </td>
+                    <td>
+                        <a class="btn btn-info" asp-controller="Filmes" asp-action="Adicionar"> 
+                            Adicionar à minha lista
+                        </a>
+                    </td>
+                </tr>
+                }
+            </table>
+            
+        </div>
+    </div>
+</div>
+
+
+
+
+
