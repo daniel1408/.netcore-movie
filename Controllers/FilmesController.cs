@@ -14,7 +14,7 @@ namespace movie.Controllers
         public IActionResult Listar()
         {
             Service s = new Service();
-            Filmes[] filmes = s.GetFilmes();
+            List<Filmes> filmes = s.GetFilmes();
             return View(filmes);
         }
 
@@ -22,13 +22,13 @@ namespace movie.Controllers
         {
             Filmes FilmeEspecifico = null;
             Service s = new Service();
-            Filmes[] filmes = s.GetFilmes();
+            List<Filmes> filmes = s.GetFilmes();
             
-            for(int i = 0; i<filmes.Length; i++)
+            foreach(Filmes item in filmes)
             {
-                if(filmes[i].Id == Id)
+                if(item.Id == Id)
                 {
-                    FilmeEspecifico = filmes[i];
+                    FilmeEspecifico = item;
                 }
             }
             return View(FilmeEspecifico);
@@ -49,13 +49,13 @@ namespace movie.Controllers
             List<Filmes> FilmesTopTen = new List<Filmes>();
 
             Service s = new Service();
-            Filmes[] filmes = s.GetFilmes();
+            List<Filmes> filmes = s.GetFilmes();
             
-            for(int i = 0; i<filmes.Length; i++)
+            foreach(Filmes item in filmes)
             {
-                if(filmes[i].IsTopTen == 1)
+                if(item.IsTopTen == 1)
                 {
-                    FilmesTopTen.Add(filmes[i]);
+                    FilmesTopTen.Add(item);
                 }
             }
             
@@ -65,8 +65,22 @@ namespace movie.Controllers
         public IActionResult Ranking250()
         {
             Service s = new Service();
-            Filmes[] filmes = s.GetFilmes();
+            List<Filmes> filmes = s.GetFilmes();
             return View(filmes);
+        }
+
+        public IActionResult AtorDetalhes(int Id)
+        {
+            Service s = new Service();
+            Ator ator = s.GetAtor(Id);
+            return View(ator);
+        }
+
+        public IActionResult Cast()
+        {
+            Service s = new Service();
+            List<Ator> atores = s.GetAtores();
+            return View(atores);
         }
     }
 }

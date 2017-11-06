@@ -1,0 +1,26 @@
+@model IEnumerable<movie.Models.Ator>
+    
+@{
+    ViewBag.Title = "Cast";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 style="text-align: center"><b>Atores e Atrizes</b></h2>
+            <hr>
+            @foreach (var item in Model) { 
+                <div class="card" style="width: 15rem;">
+                    
+                    <a asp-controller="Filmes" asp-action="AtorDetalhes" asp-route-id="@item.Id"> 
+                        <img class="card-img-top" src="@Html.DisplayFor(modelItem => item.Imagem)" alt="Card image cap">
+                    </a>
+                    
+                    <div class="card-body">
+                        <h5 class="card-title">@Html.DisplayFor(modelItem => item.Nome)</h5>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

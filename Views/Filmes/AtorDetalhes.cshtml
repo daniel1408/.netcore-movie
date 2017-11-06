@@ -1,0 +1,47 @@
+@model movie.Models.Ator
+@{
+    ViewBag.Title = "AtorDetalhes";
+}
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-4">            
+            <div class="card" style="width: 25rem;">            
+                <img class="card-img-top" src="@Html.DisplayFor(model => model.Imagem)" alt="Card image cap">
+            </div>
+        </div>
+
+        <div class="col-md-8">
+            <div class="form-horizontal">
+                <h2 style="text-align: center"><b>@Html.DisplayFor(model => model.Nome) </b></h2>    
+                <hr />
+                <p>
+                    <b>Sobre @Html.DisplayFor(model => model.Nome):</b> @Html.DisplayFor(model => model.Sobre)
+                </p>
+                <p>
+                    <b>Quantidade de Filmes:</b> @Html.DisplayFor(model => model.QuantidadeDeFilmes)
+                </p>
+                <hr>
+
+                <h3>
+                    <b>Filmes:</b>
+                </h3>
+
+                <!-- @foreach (Filmes filme in Model.FilmesFeitos)
+                {
+                    <div class="card" style="width: 8rem;">
+                        <a asp-controller="Filmes" asp-action="Detalhes" asp-route-id="@filme.Id"> 
+                            <img class="card-img-top" src="@Html.DisplayFor(modelItem => filme.Imagem)" alt="Card image cap">
+                        </a>
+                    <span style="font-size: 85%">@Html.DisplayFor(modelItem => filme.Nome)</span>
+                    </div>
+                } -->
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+

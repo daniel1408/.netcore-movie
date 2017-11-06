@@ -20,7 +20,6 @@ namespace movie.Models
         [DisplayName("Minha Nota")]
         public int Nota { get; set; } 
 
-
         public string Imagem { get; set;}
 
         [DisplayName("Sinópse do Filme")]
@@ -32,7 +31,8 @@ namespace movie.Models
         [DisplayName("Roteirista do Filme")]
         public string Roteirista { get; set;}
 
-        
         public int IsTopTen { get; set;}
+
+        public Ator[] Atores { get; set;}
     }
 }
