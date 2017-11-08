@@ -17,6 +17,6 @@ namespace movie.Models
         public string Sobre { get; set; }
         public string Imagem { get; set; }
         public int QuantidadeDeFilmes { get; set; }
-        public Filmes[] FilmesFeitos { get; set; }
+        public List<Filmes> FilmesFeitos { get; set; }
     }
 }

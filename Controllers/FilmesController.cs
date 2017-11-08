@@ -7,15 +7,36 @@ using Microsoft.AspNetCore.Mvc;
 using movie.Models;
 using System.Text;
 
+using Newtonsoft.Json;  
+using System.Net.Http;  
+using System.Net.Http.Headers;  
+using System.Threading.Tasks;  
+
 namespace movie.Controllers
 {
     public class FilmesController : Controller
     {
-        public IActionResult Listar()
+        string Baseurl = "http://www.omdbapi.com/";
+        
+        public async Task<ActionResult> Listar()
         {
-            Service s = new Service();
-            List<Filmes> filmes = s.GetFilmes();
-            return View(filmes);
+            List<Filmes> filmes = new List<Filmes>();  
+            using (var client = new HttpClient())  
+            {  
+                client.BaseAddress = new Uri(Baseurl);
+                client.DefaultRequestHeaders.Clear();                  
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));  
+                  
+                HttpResponseMessage Res = await client.GetAsync("?t=heat&&apikey=8af6a417");  
+                
+                if (Res.IsSuccessStatusCode)  
+                {  
+                    var EmpResponse = Res.Content.ReadAsStringAsync().Result;
+                    filmes = JsonConvert.DeserializeObject<List<Filmes>>(EmpResponse);  
+                }  
+                
+                return View(filmes);  
+            }
         }
 
         public IActionResult Detalhes(int Id)

@@ -4,35 +4,32 @@ using System.ComponentModel;
 
 namespace movie.Models
 {
-    public class Filmes
+    public class RootObject
     {
-        [DisplayName("Nome do Filme")]
-        public string Nome { get; set; }
-        
-        [DisplayName("Ano do Filme")]
-        public int Ano { get; set; }
-
-        public int Id { get; set; }        
-
-        [DisplayName("Genero")]
-        public string Categoria { get; set; } 
-
-        [DisplayName("Minha Nota")]
-        public int Nota { get; set; } 
-
-        public string Imagem { get; set;}
-
-        [DisplayName("Sinópse do Filme")]
-        public string Sinopse { get; set;}
-
-        [DisplayName("Diretor do Filme")]
-        public string Diretor { get; set;}
-
-        [DisplayName("Roteirista do Filme")]
-        public string Roteirista { get; set;}
-
-        public int IsTopTen { get; set;}
-
-        public Ator[] Atores { get; set;}
+        public string Title { get; set; }
+        public string Year { get; set; }
+        public string Rated { get; set; }
+        public string Released { get; set; }
+        public string Runtime { get; set; }
+        public string Genre { get; set; }
+        public string Director { get; set; }
+        public string Writer { get; set; }
+        public string Actors { get; set; }
+        public string Plot { get; set; }
+        public string Language { get; set; }
+        public string Country { get; set; }
+        public string Awards { get; set; }
+        public string Poster { get; set; }
+        public List<Rating> Ratings { get; set; }
+        public string Metascore { get; set; }
+        public string imdbRating { get; set; }
+        public string imdbVotes { get; set; }
+        public string imdbID { get; set; }
+        public string Type { get; set; }
+        public string DVD { get; set; }
+        public string BoxOffice { get; set; }
+        public string Production { get; set; }
+        public string Website { get; set; }
+        public string Response { get; set; }
     }
 }

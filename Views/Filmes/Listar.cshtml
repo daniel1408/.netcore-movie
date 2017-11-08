@@ -17,12 +17,12 @@
             @foreach (var item in Model) { 
                 <div class="card" style="width: 15rem;">
                     
-                    <a asp-controller="Filmes" asp-action="Detalhes" asp-route-id="@item.Id"> 
-                        <img class="card-img-top" src="@Html.DisplayFor(modelItem => item.Imagem)" alt="Card image cap">
+                    <a asp-controller="Filmes" asp-action="Detalhes" asp-route-id="@item.Title"> 
+                        <img class="card-img-top" src="@Html.DisplayFor(modelItem => item.Poster)" alt="Card image cap">
                     </a>
                     
                     <div class="card-body">
-                        <h5 class="card-title">@Html.DisplayFor(modelItem => item.Nome)</h5>
+                        <h5 class="card-title">@Html.DisplayFor(modelItem => item.Title)</h5>
                     
                         <select>
                             <option>Top 10</option>

@@ -4,6 +4,7 @@
     ViewBag.Title = "Detalhes";
 }
 
+
 <div class="container">
     <div class="row">
 
@@ -52,11 +53,19 @@
                 <h5>
                     Cast
                 </h5>
-                
+                @*
+                @foreach (Ator item in Model.Atores)
+                {
+                    <div class="card" style="width: 8rem;">
+                        <a asp-controller="Filmes" asp-action="AtorDetalhes" asp-route-id="@item.Id"> 
+                            <img class="card-img-top" src="@Html.DisplayFor(modelItem => item.Imagem)" alt="Card image cap">
+                        </a>
+                    <span style="font-size: 85%">@Html.DisplayFor(modelItem => item.Nome)</span>
+                    </div>
+                }
+                *@
 
             </div>
         </div>
     </div>
 </div>
-
-

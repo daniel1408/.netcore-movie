@@ -14,29 +14,7 @@ namespace movie.Controllers
     {
         // public string UrlSeries = "http://api.tvmaze.com/shows/11";
         public List<Filmes> GetFilmes()
-        {
-            
-            
-            //  int[] chappie = {1,2,4,5};
-            //  int[] whatchmen = {2,3,5,6};
-            //  int[] braveheart = {3,4,5,6};
-            //  int[] madMax = {4,5,6};
-            //  int[] vendetta = {4,5,6};
-            //  int[] batman = {1,2,3,};
-            //  int[] theLastJedi = {1,3,4,5,6};
-            //  int[] theWolverine = {1,5,6};
-            //  int[] dieHard = {1,2,4,5};
-            //  int[] americanSniper = {3,4,5,6};
-            //  int[] theGoodFather = {1,4,5,6};
-            //  int[] interstellar = {1,2,6};
-            //  int[] killBill = {1, 3,5,6};
-            //  int[] umaOdisseia = {3,4,5,6};
-            //  int[] bladeRunner = {1,2,3,6};
-            //  int[] wonderWoman = {1,4,5,6};
-            //  int[] matrix = {1,4,5,6};
-            //  int[] frozen = {2,3,4,6};
-
-
+        {            
             List<Filmes> filmes = new List<Filmes>();
             
             Filmes chappie = new Filmes()
@@ -51,7 +29,6 @@ namespace movie.Controllers
                 Roteirista = "Roteirista genérico",
                 Ano = 2010,
                 IsTopTen = 1,
-                // Atores = GetAtor(chappie)
             };
 
             Filmes whatchmen = new Filmes()
@@ -66,7 +43,6 @@ namespace movie.Controllers
                 Roteirista = "Roteirista genérico",
                 Ano = 2010,
                 IsTopTen = 0,
-                // Atores = GetAtor(whatchmen)
             };
 
             Filmes batman = new Filmes()
@@ -81,7 +57,6 @@ namespace movie.Controllers
                 Roteirista = "Roteirista genérico",
                 Ano = 2010,
                 IsTopTen = 1,
-                // Atores = GetAtor(batman)
             };
 
             Filmes theLastJedi = new Filmes()
@@ -96,7 +71,6 @@ namespace movie.Controllers
                 Roteirista = "Roteirista genérico",
                 Ano = 2010,
                 IsTopTen = 0,
-                // Atores = GetAtor(theLastJedi)
             };
 
             Filmes wolverine = new Filmes()
@@ -111,7 +85,6 @@ namespace movie.Controllers
                 Roteirista = "Roteirista genérico",
                 Ano = 2010,
                 IsTopTen = 0,
-                // Atores = GetAtor(theWolverine)
             };
 
             Filmes dieHard = new Filmes()
@@ -126,7 +99,6 @@ namespace movie.Controllers
                 Roteirista = "Roteirista genérico",
                 Ano = 2010,
                 IsTopTen = 0,
-                // Atores = GetAtor(dieHard)
             };
 
             Filmes americanSniper = new Filmes()
@@ -141,7 +113,6 @@ namespace movie.Controllers
                 Roteirista = "Roteirista genérico",
                 Ano = 2010,
                 IsTopTen = 0,
-                // Atores = GetAtor(americanSniper)
             };
 
             Filmes braveheart = new Filmes()
@@ -156,7 +127,6 @@ namespace movie.Controllers
                 Roteirista = "Roteirista genérico",
                 Ano = 2010,
                 IsTopTen = 1,
-                // Atores = GetAtor(braveheart)
             };
 
             Filmes theGoodFather = new Filmes()
@@ -170,8 +140,7 @@ namespace movie.Controllers
                 Diretor = "Diretor genérico",
                 Roteirista = "Roteirista genérico",
                 Ano = 2010,
-                IsTopTen = 0,
-                // Atores = GetAtor(theGoodFather)
+                IsTopTen = 0,                
             };
                         
             
@@ -187,7 +156,6 @@ namespace movie.Controllers
                 Roteirista = "Roteirista genérico",
                 Ano = 2010,
                 IsTopTen = 0,
-                // Atores = GetAtor(frozen)
             };
 
             Filmes interestellar = new Filmes()
@@ -202,7 +170,6 @@ namespace movie.Controllers
                 Roteirista = "Roteirista genérico",
                 Ano = 2010,
                 IsTopTen = 1,
-                // Atores = GetAtor(interstellar)
             };
 
             Filmes killBill = new Filmes()
@@ -217,7 +184,6 @@ namespace movie.Controllers
                 Roteirista = "Roteirista genérico",
                 Ano = 2010,
                 IsTopTen = 0,
-                // Atores = GetAtor(killBill)
             };
 
             Filmes bladeRunner = new Filmes()
@@ -232,7 +198,6 @@ namespace movie.Controllers
                 Roteirista = "Roteirista genérico",
                 Ano = 2010,
                 IsTopTen = 1,
-                // Atores = GetAtor(bladeRunner)
             };
             Filmes umaOdisseia = new Filmes()
             {
@@ -245,8 +210,7 @@ namespace movie.Controllers
                 Diretor = "Diretor genérico",
                 Roteirista = "Roteirista genérico",
                 Ano = 2010,
-                IsTopTen = 0,
-                // Atores = GetAtor(umaOdisseia)
+                IsTopTen = 0,                
             };
 
             Filmes vendetta = new Filmes()
@@ -261,7 +225,6 @@ namespace movie.Controllers
                 Roteirista = "Roteirista genérico",
                 Ano = 2010,
                 IsTopTen = 1,
-                // Atores = GetAtor(vendetta)
             };
 
             Filmes madMax = new Filmes()
@@ -276,7 +239,6 @@ namespace movie.Controllers
                 Roteirista = "Roteirista genérico",
                 Ano = 2010,
                 IsTopTen = 1,
-                // Atores = GetAtor(madMax)
             };
 
             Filmes wonderWoman = new Filmes()
@@ -291,7 +253,6 @@ namespace movie.Controllers
                 Roteirista = "Roteirista genérico",
                 Ano = 2010,
                 IsTopTen = 0,
-            // Atores = GetAtor(wonderWoman)
             };
 
             Filmes matrix = new Filmes()
@@ -306,7 +267,6 @@ namespace movie.Controllers
                 Roteirista = "Roteirista genérico",
                 Ano = 2010,
                 IsTopTen = 1,
-                // Atores = GetAtor(matrix)
             };
     
 
@@ -417,8 +377,24 @@ namespace movie.Controllers
                     atorEspecifico = item;
                 }
             }
-            
             return atorEspecifico;
+        }
+
+        public List<Ator> GetElenco(int[] Id)
+        {
+            List<Ator> elenco = new List<Ator>();
+            List<Ator> atores = GetAtores();
+            
+            foreach(Ator item in atores)
+            {
+                foreach(int elemento in Id)
+                {
+                    if(item.Id == elemento){
+                        elenco.Add(item);
+                    }
+                }
+            }
+            return elenco;
         }
     }
 }

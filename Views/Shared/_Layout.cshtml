@@ -21,8 +21,8 @@
             <div class="container">
                 <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">HOME</a>
                 
-                <div class="navbar-collapse collapse">    
-                    <div style="position:relative; float:left; width:5.6%">
+                <div class="navbar-collapse collapse" > 
+                    <div style="position:relative; float:left; width:5.6%;">
                         <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <img src="http://mic2017.upf.edu/wp-content/themes/giornalismo/images/mobile-nav-icon.png" style="width:100%">
                         </a>                        
@@ -36,6 +36,13 @@
                         </div>
                     </div>
 
+                    <div class="campo-busca" style="margin-left: 19%">
+                        <form>
+                            <input class="form-control mr-sm-2 " type="text" placeholder="Qual filme deseja encontrar hoje?" aria-label="Search">
+                            <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
+                        </form>
+                    </div>
+
 
                     <ul class="nav navbar-nav" style="position:relative; float:right;">
                         <li>
@@ -45,13 +52,6 @@
                             <a asp-area="" asp-controller="System" asp-action="Sing">Criar Conta</a>
                         </li>
                     </ul>
-
-                    <div class="campo-busca" style="position:relative; float:right">
-                        <form>
-                            <input class="form-control mr-sm-2 " type="text" placeholder="Qual filme deseja encontrar hoje?" aria-label="Search">
-                            <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
-                        </form>
-                    </div>
                 </div>
 
                     
