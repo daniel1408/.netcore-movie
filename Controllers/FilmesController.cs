@@ -10,37 +10,23 @@ using System.Text;
 using Newtonsoft.Json;  
 using System.Net.Http;  
 using System.Net.Http.Headers;  
-using System.Threading.Tasks;  
+
 
 namespace movie.Controllers
 {
     public class FilmesController : Controller
-    {
-        string Baseurl = "http://www.omdbapi.com/";
-        
+    {   
         public async Task<ActionResult> Listar()
         {
-            List<Filmes> filmes = new List<Filmes>();  
-            using (var client = new HttpClient())  
-            {  
-                client.BaseAddress = new Uri(Baseurl);
-                client.DefaultRequestHeaders.Clear();                  
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));  
-                  
-                HttpResponseMessage Res = await client.GetAsync("?t=heat&&apikey=8af6a417");  
-                
-                if (Res.IsSuccessStatusCode)  
-                {  
-                    var EmpResponse = Res.Content.ReadAsStringAsync().Result;
-                    filmes = JsonConvert.DeserializeObject<List<Filmes>>(EmpResponse);  
-                }  
-                
-                return View(filmes);  
-            }
+            Service s = new Service();
+
+            List<Filmes> filmes = await s.GetMovies();
+            return View(filmes);
         }
 
         public IActionResult Detalhes(int Id)
         {
+            /*
             Filmes FilmeEspecifico = null;
             Service s = new Service();
             List<Filmes> filmes = s.GetFilmes();
@@ -51,12 +37,16 @@ namespace movie.Controllers
                 {
                     FilmeEspecifico = item;
                 }
-            }
-            return View(FilmeEspecifico);
+            }*/
+            return View();
         }
 
-        public IActionResult Adicionar()
+        public async Task<IActionResult> Adicionar(string movieName, string movieYear)
         {
+            Service s = new Service();
+            Filmes heat = await s.GetMoviesOmdb("Interstellar", "2014");
+            s.PostMovie(heat);
+
             return View();
         }
 
@@ -67,6 +57,7 @@ namespace movie.Controllers
 
         public IActionResult Ranking()
         {
+            /*
             List<Filmes> FilmesTopTen = new List<Filmes>();
 
             Service s = new Service();
@@ -79,29 +70,29 @@ namespace movie.Controllers
                     FilmesTopTen.Add(item);
                 }
             }
-            
-            return View(FilmesTopTen);
+            */
+            return View();
         }
         
         public IActionResult Ranking250()
         {
-            Service s = new Service();
-            List<Filmes> filmes = s.GetFilmes();
-            return View(filmes);
+            // Service s = new Service();
+            // List<Filmes> filmes = s.GetMovies();
+            return View();
         }
 
         public IActionResult AtorDetalhes(int Id)
         {
-            Service s = new Service();
-            Ator ator = s.GetAtor(Id);
-            return View(ator);
+            // Service s = new Service();
+            // Ator ator = s.GetAtor(Id);
+            return View();
         }
 
         public IActionResult Cast()
         {
-            Service s = new Service();
-            List<Ator> atores = s.GetAtores();
-            return View(atores);
+            // Service s = new Service();
+            // List<Ator> atores = s.GetAtores();
+            return View();
         }
     }
 }

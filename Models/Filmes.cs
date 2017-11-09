@@ -4,7 +4,7 @@ using System.ComponentModel;
 
 namespace movie.Models
 {
-    public class RootObject
+    public class Filmes
     {
         public string Title { get; set; }
         public string Year { get; set; }
