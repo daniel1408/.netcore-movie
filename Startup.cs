@@ -22,6 +22,10 @@ namespace movie
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+
+            <strong>var connection = @"Server=(localdb)\mssqllocaldb;Database=AspCore_NovoDB;Trusted_Connection=True;";
+            services.AddDbContext&lt;BloggingContext&gt;(options =&gt; options.UseSqlServer(connection));</strong>
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

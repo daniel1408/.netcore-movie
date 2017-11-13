@@ -154,16 +154,16 @@ a.link {
 
 }
 
-#menu li a,  #menu li a:link {
-        font-size:1.2em;
-        color:rgb(255,255,255);
+    #menu li a, #menu li a:link {
+        font-size: 1.2em;
+        color: rgb(255,255,255);
         text-decoration: none;
         display: block;
         -moz-transition: all 1.2s ease;
         -webkit-transition: all 1.2s ease;
         -o-transition: all 1.2s ease;
         transition: all 1.2s ease;
-}
+    }
 
 #menu li a:hover {
         color:rgb(255,255,255);
