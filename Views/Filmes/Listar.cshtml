@@ -15,7 +15,16 @@
 
             <hr>
             @foreach (var item in Model) { 
-                <div class="card" style="width: 15rem;">                    
+                <div class="card" style="width: 15rem;">         
+                    <!-- <select class="custom-select d-block my-5" required style="height: 2em; position:relative; float:left">
+                        <option value="">Escolha</option>
+                        <option value="1">Top 10</option>
+                        <option value="2">Ótimo</option>
+                        <option value="3">Bom</option>
+                        <option value="4">Regular</option>
+                        <option value="5">Ruim</option>
+                    </select> -->
+
                     <a href="#" data-value="@item.Id" class="btnInfo"> 
                         <img class="card-img-top" src="@Html.DisplayFor(modelItem => item.Poster)" alt="Card image cap">
                     </a>
