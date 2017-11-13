@@ -2,29 +2,53 @@
     ViewBag.Title = "Adicionar";
 }
 
-<div class="container janela-login-singin">
-    <div class="row">
-        <div class="col-md-12">
-            
-            <div class="panel-heading">
-                <div class="panel-title text-center">
-                    <h2 class="title"><b>Adicionar Filme</b></h2>
-                    <hr />
+<form action="/Filmes/Adicionar" method="post">
+    <div class="container janela-login-singin">
+        <div class="row">
+            <div class="col-md-12">
+                
+                <div class="panel-heading">
+                    <div class="panel-title text-center">
+                        <h2 class="title"><b>Adicionar Filme</b></h2>
+                        <hr />
+                    </div>
+                </div> 
+                
+                <div class="form-group">
+                    <label class="cols-sm-2 control-label">Filme</label>    
+                    <input type="text" class="form-control" name="movieName" placeholder="Qual filme deseja adicionar?"/>
                 </div>
-            </div> 
-            
-            <div class="form-group">
-                <label class="cols-sm-2 control-label">Filme</label>    
-                <input type="text" class="form-control" name="movieName" placeholder="Qual filme deseja adicionar?"/>
+                <!-- Razor form -->
+
+                 <div class="form-group">
+                    <label class="cols-sm-2 control-label">Ano de lançamento</label>    
+                    <input type="text" class="form-control" name="movieYear" placeholder="Qual o ano do filme?"/>
+                </div>
+
+                <input type="submit" class="btn btn-lg btn-primary btn-block"></input>
+                
+            </div>
+        </div>
+    </div>
+</form>
+
+<div class="modal fade" id="modalAdd" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title"><b>Filme não Encontrado</b></h2>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
             </div>
 
-            <div class="form-group">
-                <label class="cols-sm-2 control-label">Ano de lançamento</label>    
-                <input type="text" class="form-control" name="movieYear" placeholder="Qual o ano do filme?"/>
+            <div class="modal-body">
+                <div id="add"></div>
             </div>
-
-            <input type="submit" class="btn btn-lg btn-primary btn-block"></input>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
         </div>
     </div>
 </div>
-

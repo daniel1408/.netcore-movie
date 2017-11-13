@@ -19,40 +19,55 @@ namespace movie.Controllers
         public async Task<ActionResult> Listar()
         {
             Service s = new Service();
-
             List<Filmes> filmes = await s.GetMovies();
             return View(filmes);
         }
 
-        public IActionResult Detalhes(int Id)
+        public async Task<IActionResult> Detalhes(int Id)
         {
-            /*
-            Filmes FilmeEspecifico = null;
             Service s = new Service();
-            List<Filmes> filmes = s.GetFilmes();
-            
-            foreach(Filmes item in filmes)
-            {
-                if(item.Id == Id)
-                {
-                    FilmeEspecifico = item;
+            Filmes EspecificMovie = null;
+
+            List<Filmes> filmes = await s.GetMovies();
+            foreach(Filmes item in filmes){
+                if(item.Id == Id){
+                    EspecificMovie = item;
                 }
-            }*/
-            return View();
+            }
+
+            return PartialView(EspecificMovie);
         }
 
-        public async Task<IActionResult> Adicionar(string movieName, string movieYear)
+        [HttpGet]
+        public IActionResult Adicionar()
+        {
+            return View();
+        }
+        
+        [HttpPost]
+        public async Task<IActionResult> Adicionar([FromForm] string movieName, string movieYear)
         {
             Service s = new Service();
-            Filmes heat = await s.GetMoviesOmdb("Interstellar", "2014");
-            s.PostMovie(heat);
+            Filmes filme = await s.GetMoviesOmdb(movieName, movieYear);
 
-            return View();
+            if(filme.Title == null){
+                return RedirectToAction("Confirmation");
+            }else{
+                s.PostMovie(filme);
+                return RedirectToAction("Listar");
+            }
         }
 
-        public IActionResult Deletar()
+        public IActionResult Confirmation()
         {
-            return View();
+            return PartialView();
+        }
+
+        public IActionResult Deletar(int id)
+        {
+            Service s = new Service();
+            Filmes filme = s.DeleteMovie(id);
+            return View(filme);
         }
 
         public IActionResult Ranking()

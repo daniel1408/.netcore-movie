@@ -12,12 +12,12 @@ namespace movie.Controllers
     {
         public IActionResult Login()
         {
-            return View();
+            return PartialView();
         }
 
         public IActionResult Sing()
         {
-            return View();
+            return PartialView();
         }
     }
 }

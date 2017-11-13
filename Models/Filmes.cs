@@ -6,6 +6,7 @@ namespace movie.Models
 {
     public class Filmes
     {
+        public int Id { get; set; }
         public string Title { get; set; }
         public string Year { get; set; }
         public string Rated { get; set; }

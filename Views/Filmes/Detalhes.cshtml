@@ -1,75 +1,84 @@
-﻿@* @model movie.Models.Filmes *@
+﻿@model movie.Models.Filmes
 
 @{
     ViewBag.Title = "Detalhes";
 }
 
-Detalhes do filme
 
-@*
 <div class="container">
+    
+    <div style="width:48%;">
+        <div>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </div>
+
+        <h3 style="text-align:center"><b>@Html.DisplayFor(model => model.Title)</b> (@Html.DisplayFor(model => model.Year))</h3>
+        <hr>
+    </div>
+
     <div class="row">
 
-        <div class="col-md-4">
-            <div>
-                <select id="appearance-select">
-                    <option>Top 10</option>
-                    <option>Muito bom</option>
-                    <option>Bom</option>
-                    <option>Ruim</option>
-                    <option>Mediano</option>
-                </select>
-            </div>
-            <div class="card" style="width: 25rem;">            
-                <img class="card-img-top" src="@Html.DisplayFor(model => model.Imagem)" alt="Card image cap">
-            </div>
-            <div style="width:70%; margin:0% auto">
-                <button class="btn" style=""> Remover da lista</button>
+        <div class="col-md-2">
+            
+            <div class="card" style="width: 20rem;">
+                <img class="card-img-top" src="@Html.DisplayFor(model => model.Poster)" alt="Card image cap">
+                <div>
+                    <h4>IMDB: <b> @Html.DisplayFor(model => model.imdbRating)</b></h4>
+                </div>     
             </div>
         </div>
 
         <div class="col-md-8">
-            <div class="form-horizontal">
-                <h2 style="text-align: center"><b>@Html.DisplayFor(model => model.Nome) </b></h2>    
-                <hr />
-                <p>
-                    <b>Sinopse:</b> @Html.DisplayFor(model => model.Sinopse)
-                </p>
-
-                <p>
-                    <b>Original:</b> @Html.DisplayFor(model => model.Nome)
-                </p>
-                <p>
-                    <b>Gênero:</b> @Html.DisplayFor(model => model.Categoria)
-                </p>
-                <p>
-                    <b>Diretor:</b> @Html.DisplayFor(model => model.Diretor)
-                </p>
-                <p>
-                    <b>Roteirista:</b> @Html.DisplayFor(model => model.Roteirista)
-                </p>
-                <p>
-                    <b>Ano:</b> @Html.DisplayFor(model => model.Ano)
-                </p>
-
-                <h5>
-                    Cast
-                </h5>
-                @*
-                @foreach (Ator item in Model.Atores)
-                {
-                    <div class="card" style="width: 8rem;">
-                        <a asp-controller="Filmes" asp-action="AtorDetalhes" asp-route-id="@item.Id"> 
-                            <img class="card-img-top" src="@Html.DisplayFor(modelItem => item.Imagem)" alt="Card image cap">
-                        </a>
-                    <span style="font-size: 85%">@Html.DisplayFor(modelItem => item.Nome)</span>
-                    </div>
-                }
+            <div style="margin-left: 3%; width:45%">
                 
+                <p>
+                    <b>Sinopse:</b> @Html.DisplayFor(model => model.Plot)
+                </p>
+                <p>
+                    <b>Diretor:</b> @Html.DisplayFor(model => model.Director)
+                </p>
+                <p>
+                    <b>Genero:</b> @Html.DisplayFor(model => model.Genre)
+                </p>
+                <p>
+                    <b>Elenco:</b> @Html.DisplayFor(model => model.Actors)
+                </p>
+                <p>
+                    <b>Roteiristas:</b> @Html.DisplayFor(model => model.Writer)
+                </p>
+                <p>
+                    <b>País:</b> @Html.DisplayFor(model => model.Country)
+                </p>
+                <p>
+                    <b>Duração:</b> @Html.DisplayFor(model => model.Runtime)
+                </p>
+                <p>
+                    <b>Lançamento:</b> @Html.DisplayFor(model => model.Released)
+                </p>
+                <p>
+                    <b>Prêmiações:</b> @Html.DisplayFor(model => model.Awards)
+                </p>
 
             </div>
         </div>
     </div>
+    
+    <div style="width:48%;">
+        <hr>
+        <!-- <a href="#" data-value="7" class="btn my-btn btn-block btnDelete"> Remover da lista </a> -->
+        <a class="btn  my-btn btn-block" asp-controller="Filmes" asp-action="Deletar" data-value="8"> 
+                Remover da lista
+        </a>
+    </div>
 </div>
 
-*@
+<div class="modal fade" id="modalDelete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div id="delete"></div>
+            </div>
+        </div>
+    </div>
+</div>

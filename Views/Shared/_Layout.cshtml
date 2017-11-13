@@ -17,26 +17,49 @@
         </environment>
     </head>
     <body>
-        <nav class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">HOME</a>
-                
-                <div class="navbar-collapse collapse" > 
-                    <div style="position:relative; float:left; width:5.6%;">
-                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img src="http://mic2017.upf.edu/wp-content/themes/giornalismo/images/mobile-nav-icon.png" style="width:100%">
-                        </a>                        
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <ul>
-                                <li><a asp-controller="Filmes" asp-action="Listar">Filmes</a></li>
-                                <li><a asp-controller="Filmes" asp-action="Cast">Atrizes e Atores</a></li>
-                                <li><a asp-controller="Filmes" asp-action="Ranking">Top 10</a></li>
-                                <li><a asp-controller="Filmes" asp-action="Ranking250">Top 100</a></li>
+    
+    <!-- Incicio barra lateral -->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-2">
+                    <div id="lateral">
+                        <div id="menu">
+                            <div  style="margin-top:4em">
+                                <a asp-area="" asp-controller="Home" asp-action="Index">
+                                    <img src="http://cdn.mysitemyway.com/etc-mysitemyway/icons/legacy-previews/icons-256/black-inlay-crystal-clear-bubble-icons-sports-hobbies/042614-black-inlay-crystal-clear-bubble-icon-sports-hobbies-filmmaker2-sc49.png" style="width:150px">
+                                </a>
+                            </div>
+                            
+                            <ul class="box">                                
+                                <li><a asp-controller="Filmes" asp-action="Listar">Minhas lista</a></li>
+                                <li><a asp-controller="Filmes" asp-action="Ranking">Meu Top 10</a></li>
+                                <li><a asp-controller="Filmes" asp-action="Ranking250">Recomendações</a></li>
                             </ul>
+
                         </div>
                     </div>
+                </div >
+                <div class="col-md-9">
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+        <!-- FIm barra lateral -->
+        
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                
+                <div style=" width: 10%; position:relative; float:left">
+                    
+                    
+                    <a href="" id="iconMenu" style="margin-left:30%">
+                        <img src="http://www.piratebrands.com/images/menu.png" width="50px">
+                    </a>
+                </div>
 
-                    <div class="campo-busca" style="margin-left: 19%">
+                
+                <div class="navbar-collapse collapse" style=" width:80%; position:relative;float:right"> 
+                    <div class="campo-busca" style="margin-left: 23%">
                         <form>
                             <input class="form-control mr-sm-2 " type="text" placeholder="Qual filme deseja encontrar hoje?" aria-label="Search">
                             <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
@@ -46,22 +69,19 @@
 
                     <ul class="nav navbar-nav" style="position:relative; float:right;">
                         <li>
-                            <a asp-area="" asp-controller="System" asp-action="Login">Entrar</a>
+                            <a href="#" class="btnLogin">
+                                Entrar
+                            </a>
                         </li>
                         <li>
-                            <a asp-area="" asp-controller="System" asp-action="Sing">Criar Conta</a>
+                            <a href="#" class="btnSing">
+                                Criar Conta
+                            </a>
                         </li>
                     </ul>
                 </div>
-
-                    
-
             </div>
         </nav>
-
-        <div class="container">
-            @RenderBody()
-        </div>
 
 
         <environment include="Development">
@@ -93,3 +113,25 @@
         <p>&copy; @DateTime.Now.Year - daniel-costa@ufu.br</p>
     </footer>
 </html>
+
+
+
+<div class="modal fade" id="modalSing" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div id="sing"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div id="login"></div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,8 +1,7 @@
 body{padding-top:50px;padding-bottom:20px}.body-content{padding-left:15px;padding-right:15px}.carousel-caption p{font-size:20px;line-height:1.4}.carousel-inner .item img[src$=".svg"]{width:100%}#qrCode{margin:15px}@media screen and (max-width:767px){.carousel-caption{display:none}}
 
 
-/*slider-inicio*/
-.slider
+/* .slider
 {
         margin: auto;
         overflow:hidden;
@@ -52,9 +51,7 @@ body{padding-top:50px;padding-bottom:20px}.body-content{padding-left:15px;paddin
         {
                 margin-left: 0%;
         }
-}
-
-/*slider-fim*/
+} */
 
 footer{
         text-align: center;
@@ -69,8 +66,7 @@ footer{
         display: inline-block;
         border: 1px solid rgb(177, 177, 177);
         border-radius: 3px;
-        margin: 1%;
-        padding: 0.5%;
+        margin: 1%;        
         text-align: center;
         color: black;
 }
@@ -92,7 +88,7 @@ a.link {
 
 
 .janela-login-singin{
-        width: 40%;
+        width: 50%;
 }
 
 .campo-busca{
@@ -111,3 +107,88 @@ a.link {
         color: rgb(0, 0, 0)
 
 }
+
+
+/* Inicio teste */
+
+
+#lateral {
+	padding:0 50px 0 0;
+	-moz-transition: all 0.5s ease;
+        -webkit-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+        
+        font-size:1.0em;
+	background:rgb(44,62,80);
+	background-image: -moz-linear-gradient(135deg, rgb(3,8,12), rgb(16,57,79));
+        background-image: -webkit-linear-gradient(135deg, rgb(3,8,12), rgb(16,57,79));
+        background-image: -o-linear-gradient(135deg, rgb(3,8,12), rgb(16,57,79) );
+        background-image: -ms-linear-gradient(135deg, rgb(3,8,12), rgb(16,57,79));
+        background-image: linear-gradient(135deg, rgb(3,8,12), rgb(16,57,79));
+	height:100%;
+	width:220px; 
+	position:fixed;
+	top:0;
+	left:-220px;
+}
+        
+#lateral .box {
+        list-style-type:none;
+        font-style:normal;
+        margin: 1em 0 2em 1em;
+        color:rgb(255,255,255);
+}
+
+
+#menu {
+        position:relative;
+        font-size:1.0em;
+        margin:1em 0 1em 0;
+        padding:0;
+}
+
+#menu li {
+        padding:15%;
+        margin:0 0 0 -35%;
+
+}
+
+#menu li a,  #menu li a:link {
+        font-size:1.2em;
+        color:rgb(255,255,255);
+        text-decoration: none;
+        display: block;
+        -moz-transition: all 1.2s ease;
+        -webkit-transition: all 1.2s ease;
+        -o-transition: all 1.2s ease;
+        transition: all 1.2s ease;
+}
+
+#menu li a:hover {
+        color:rgb(255,255,255);
+        background-color:rgba(255,255,255,0.2);
+        -moz-transition: all 0.5s ease;
+        -webkit-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+}
+
+
+.card-title{
+        font-size:12px;
+        color: rgb(0, 0, 0);
+        display: inline
+}
+
+
+.my-btn{
+        background-color: rgb(15, 24, 34);
+        color: rgb(255, 255, 255);
+}
+
+.my-btn:hover{
+        background-color: rgb(8, 14, 20);
+        color: rgb(255, 255, 255);
+}
+

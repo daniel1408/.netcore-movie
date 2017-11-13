@@ -29,7 +29,7 @@ namespace movie.Controllers
             client.DefaultRequestHeaders.Clear();                  
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));  
                 
-            HttpResponseMessage Res = await client.GetAsync("api/values");  
+            HttpResponseMessage Res = await client.GetAsync("api/movie");  
             
             if (Res.IsSuccessStatusCode)  
             {  
@@ -39,6 +39,19 @@ namespace movie.Controllers
             
             return filmes;
         }
+
+        // public Filmes GetEspecificMovie(int id){
+            
+        //     List<Filmes> filmes = GetMovies();
+        //     Filmes especificMovie = null;
+
+        //     foreach(Filmes item in filmes){
+        //         if(item.Id == id){
+        //             especificMovie = item;
+        //         }
+        //     }
+        //     return especificMovie;
+        // }
 
         public async Task<Filmes> GetMoviesOmdb(string title, string year)
         {            
@@ -66,41 +79,30 @@ namespace movie.Controllers
             client.DefaultRequestHeaders.Clear();                  
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));  
 
-            var req = new HttpRequestMessage(HttpMethod.Post, "http://localhost:5050/api/values");
+            var req = new HttpRequestMessage(HttpMethod.Post, "http://localhost:5050/api/movie");
             var reqBody = JsonConvert.SerializeObject(movie);
             
             req.Content = new StringContent(reqBody, Encoding.UTF8, "application/json");
             var resp = client.SendAsync(req).Result;
             Console.WriteLine(resp);
             Console.WriteLine(resp.Content.ReadAsStringAsync().Result);
-            /*
-            @"{
-                'Title':'Daniel',
-                'Year':'Daniel',
-                'Rated':'Daniel',
-                'Released':'Daniel',
-                'Runtime':'Daniel',
-                'Genre':'Daniel',
-                'Director':'Daniel',
-                'Writer':'Daniel',
-                'Actors':'Daniel',
-                'Plot':'Daniel',
-                'Language':'Daniel',
-                'Country':'Daniel',
-                'Awards':'Daniel',
-                'Poster':'Daniel',
-                'Metascore':'Daniel',
-                'imdbRating':'Daniel',
-                'imdbVotes':'Daniel',
-                'imdbID' :'Daniel',
-                'Type':'Daniel',
-                'DVD':'Daniel',
-                'BoxOffice':'Daniel',
-                'Production':'Daniel',
-                'Website':'Daniel',
-                'Response':'Daniel'
-            }".Replace('\'', '\"');
-            */
+        }
+
+        public Filmes DeleteMovie(int id)
+        {
+            Filmes filme = new Filmes();
+            using (var client = new HttpClient())    
+            {    
+                client.BaseAddress = new Uri("http://localhost:5050/");    
+                HttpResponseMessage Res = client.DeleteAsync($"api/movie/{id}").Result;    
+                
+                if (Res.IsSuccessStatusCode)
+                {    
+                    var response = Res.Content.ReadAsStringAsync().Result;
+                    filme = JsonConvert.DeserializeObject<Filmes>(response);  
+                }
+            }  
+            return filme;
         }
     }
 }
