@@ -5,9 +5,9 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace movie.Acount.Models
+namespace movie.Models
 {
-    public class UserAccount
+    public class User
     {
         [Key]
         public int UserID { get; set; }

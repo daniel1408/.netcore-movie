@@ -1,23 +1,23 @@
-﻿ @* @model IEnumerable<movie.Models.Filmes> *@
+﻿ @model IEnumerable<movie.Models.Filmes> 
      
 @{
-    ViewBag.Title = "Ranking250";
+    ViewBag.Title = "Recomendations";
 }
 
-Tela de ranking
- @*
+
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h2 style="text-align: center"><b>TOP 250 IMDB</b></h2>
+            <h2 style="text-align: center"><b>Recomendação do site</b></h2>
+            <h4 style="text-align: center">Estas são as recomendaçõs de filmes dadas por Daniel, o grande sábio da 7ª arte </h4>
 
             <table class="table">
                 <tr>
                     <th>
-                        @Html.DisplayNameFor(model => model.Nome)
+                        @Html.DisplayNameFor(model => model.Title)
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.Nota)
+                        @Html.DisplayNameFor(model => model.imdbRating)
                     </th>
                     <th>
                         
@@ -27,10 +27,10 @@ Tela de ranking
                 @foreach (var item in Model) {
                 <tr>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Nome)
+                        @Html.DisplayFor(modelItem => item.Title)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Nota)
+                        @Html.DisplayFor(modelItem => item.imdbRating)
                     </td>
                     <td>
                         <a class="btn btn-info" asp-controller="Filmes" asp-action="Adicionar"> 
@@ -45,7 +45,5 @@ Tela de ranking
     </div>
 </div>
 
-
-*@
 
 

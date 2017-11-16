@@ -12,43 +12,35 @@
                         <h2 class="title"><b>Adicionar Filme</b></h2>
                         <hr />
                     </div>
-                </div> 
+                </div>
+                
+                <p style="text-align:center; color:rgb(121, 121, 121)">É possível encontrar o filme somente pelo nome, mas caso haja dois com o mesmo nome, é preciso adicionar o ano de lançamento.</p>
                 
                 <div class="form-group">
                     <label class="cols-sm-2 control-label">Filme</label>    
                     <input type="text" class="form-control" name="movieName" placeholder="Qual filme deseja adicionar?"/>
                 </div>
-                <!-- Razor form -->
-
                  <div class="form-group">
                     <label class="cols-sm-2 control-label">Ano de lançamento</label>    
                     <input type="text" class="form-control" name="movieYear" placeholder="Qual o ano do filme?"/>
                 </div>
+                <div class="form-group">
+                    Como considera esse filme escolhido?
+                    
+                    <select id="selectOK" name="selectOK" style="height: 2em; background-color:rgb(255, 255, 255); color:rgb(0, 0, 0)">
+                        <option value="">Escolha</option>
+                        <option value="Não visto">Não visto</option>
+                        <option value="Top 10">Top 10</option>
+                        <option value="Ótimo">Ótimo</option>
+                        <option value="Bom">Bom</option>
+                        <option value="Regular">Regular</option>  
+                        <option value="Ruim">Ruim</option>
+                    </select>
+                    
+                </div>
 
                 <input type="submit" class="btn my-btn btn-block"></input>
-                
             </div>
         </div>
     </div>
 </form>
-
-<div class="modal fade" id="modalAdd" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 class="modal-title"><b>Filme não Encontrado</b></h2>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-
-            <div class="modal-body">
-                <div id="add"></div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-        </div>
-    </div>
-</div>

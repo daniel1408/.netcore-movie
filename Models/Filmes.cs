@@ -7,6 +7,8 @@ namespace movie.Models
     public class Filmes
     {
         public int Id { get; set; }
+
+        [DisplayName("Título do filme")]
         public string Title { get; set; }
         public string Year { get; set; }
         public string Rated { get; set; }
@@ -23,6 +25,8 @@ namespace movie.Models
         public string Poster { get; set; }
         public List<Rating> Ratings { get; set; }
         public string Metascore { get; set; }
+        
+        [DisplayName("Nota no IMDB")]
         public string imdbRating { get; set; }
         public string imdbVotes { get; set; }
         public string imdbID { get; set; }
@@ -32,5 +36,6 @@ namespace movie.Models
         public string Production { get; set; }
         public string Website { get; set; }
         public string Response { get; set; }
+        public string UserOption { get; set; }
     }
 }

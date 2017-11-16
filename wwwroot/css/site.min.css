@@ -69,6 +69,9 @@ footer{
         margin: 1%;        
         text-align: center;
         color: black;
+        -webkit-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.74);
+        -moz-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.74);
+        box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.74);
 }
 
 
@@ -117,15 +120,15 @@ a.link {
 	-moz-transition: all 0.5s ease;
         -webkit-transition: all 0.5s ease;
         -o-transition: all 0.5s ease;
-        transition: all 0.5s ease;
+        transition: all 1.7s ease;
         
         font-size:1.0em;
 	background:rgb(44,62,80);
-	background-image: -moz-linear-gradient(135deg, rgb(3,8,12), rgb(16,57,79));
-        background-image: -webkit-linear-gradient(135deg, rgb(3,8,12), rgb(16,57,79));
-        background-image: -o-linear-gradient(135deg, rgb(3,8,12), rgb(16,57,79) );
-        background-image: -ms-linear-gradient(135deg, rgb(3,8,12), rgb(16,57,79));
-        background-image: linear-gradient(135deg, rgb(3,8,12), rgb(16,57,79));
+	background-image: -moz-linear-gradient(50deg, rgb(121, 121, 121), rgb(255, 255, 255));
+        background-image: -webkit-linear-gradient(50deg, rgb(121, 121, 121), rgb(255, 255, 255));
+        background-image: -o-linear-gradient(50deg, rgb(121, 121, 121), rgb(255, 255, 255));
+        background-image: -ms-linear-gradient(50deg, rgb(121, 121, 121), rgb(255, 255, 255));
+        background-image: linear-gradient(50deg, rgb(121, 121, 121), rgb(255, 255, 255));
 	height:100%;
 	width:220px; 
 	position:fixed;
@@ -137,7 +140,7 @@ a.link {
         list-style-type:none;
         font-style:normal;
         margin: 1em 0 2em 1em;
-        color:rgb(255,255,255);
+        color:rgb(0, 0, 0);
 }
 
 
@@ -156,7 +159,7 @@ a.link {
 
 #menu li a, #menu li a:link {
         font-size: 1.2em;
-        color: rgb(255,255,255);
+        color: rgb(0, 0, 0);
         text-decoration: none;
         display: block;
         -moz-transition: all 1.2s ease;

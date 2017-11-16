@@ -10,21 +10,13 @@
             <h2 style="text-align: center"><b>Minha Lista</b></h2>
 
             <a class="btn  my-btn" asp-controller="Filmes" asp-action="Adicionar"> 
-                Adicionar Filme
+                Encontrar Novo Filme
             </a>
 
             <hr>
             @foreach (var item in Model) { 
-                <div class="card" style="width: 15rem;">         
-                    <!-- <select class="custom-select d-block my-5" required style="height: 2em; position:relative; float:left">
-                        <option value="">Escolha</option>
-                        <option value="1">Top 10</option>
-                        <option value="2">Ótimo</option>
-                        <option value="3">Bom</option>
-                        <option value="4">Regular</option>
-                        <option value="5">Ruim</option>
-                    </select> -->
-
+                <div class="card" style="width: 16.5rem;">
+                    <p>@Html.DisplayFor(modelItem => item.UserOption)</p>
                     <a href="#" data-value="@item.Id" class="btnInfo"> 
                         <img class="card-img-top" src="@Html.DisplayFor(modelItem => item.Poster)" alt="Card image cap">
                     </a>
@@ -32,6 +24,9 @@
                     <div>
                         <p class="card-title">@Html.DisplayFor(modelItem => item.Title)</p>
                     </div>
+                    <a href="#" data-value="@item.Id" class="btnRemove">
+                        Remover
+                    </a>
                 </div>
             }
         </div>
@@ -43,6 +38,16 @@
         <div class="modal-content">
             <div class="modal-body">
                 <div id="details"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="removeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div id="remove"></div>
             </div>
         </div>
     </div>

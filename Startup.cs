@@ -8,7 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
-using movie.Acount.Models;
+using Microsoft.AspNetCore.Session;
 
 namespace movie
 {
@@ -25,10 +25,11 @@ namespace movie
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            services.AddDistributedMemoryCache();
             services.AddSession();
-            var connection = @"Server=(localdb)\mssqllocaldb;Database=MVCLoginDB;Trusted_Connection=True;";
-            services.AddDbContext<OurDbContext>(options => options.UseSqlServer(connection));
+
+            // services.AddDistributedMemoryCache();
+            // var connection = @"Server=(localdb)\mssqllocaldb;Database=MVCLoginDB;Trusted_Connection=True;";
+            // services.AddDbContext<OurDbContext>(options => options.UseSqlServer(connection));
 
         }
 

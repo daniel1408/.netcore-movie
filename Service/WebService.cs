@@ -13,9 +13,9 @@ using System.Net.Http;
 using System.Net.Http.Headers;  
 using System.Threading.Tasks;
 
-namespace movie.Controllers
+namespace movie.Service
 {
-    public class Service
+    public class WebService
     {
         string OmdbBaseURL = "http://www.omdbapi.com/";
         string ApiMovieURL = "http://localhost:5050/";
@@ -34,24 +34,31 @@ namespace movie.Controllers
             if (Res.IsSuccessStatusCode)  
             {  
                 var EmpResponse = Res.Content.ReadAsStringAsync().Result;
-                filmes = JsonConvert.DeserializeObject<List<Filmes>>(EmpResponse);  
-            }     
+                filmes = JsonConvert.DeserializeObject<List<Filmes>>(EmpResponse);
+            }
             
             return filmes;
         }
 
-        // public Filmes GetEspecificMovie(int id){
+        public async Task<List<Filmes>> Recomendation(){
             
-        //     List<Filmes> filmes = GetMovies();
-        //     Filmes especificMovie = null;
+            Filmes filme = await GetMoviesOmdb("12 Angry Men", "1957");
+            Filmes filme2 = await GetMoviesOmdb("The Shawshank Redemption", "1994");
+            Filmes filme3 = await GetMoviesOmdb("Murder in the First", "1995");
+            Filmes filme4 = await GetMoviesOmdb("The Book of Eli", "2010");
+            Filmes filme5 = await GetMoviesOmdb("Man on Fire", "2004");
 
-        //     foreach(Filmes item in filmes){
-        //         if(item.Id == id){
-        //             especificMovie = item;
-        //         }
-        //     }
-        //     return especificMovie;
-        // }
+            List<Filmes> especificMovie = new List<Filmes>();
+            especificMovie.Add(filme);
+            especificMovie.Add(filme2);
+            especificMovie.Add(filme3);
+            especificMovie.Add(filme4);
+            especificMovie.Add(filme5);
+
+            //Verificar se já está na lista do usuário.
+
+            return especificMovie;
+        }
 
         public async Task<Filmes> GetMoviesOmdb(string title, string year)
         {            
