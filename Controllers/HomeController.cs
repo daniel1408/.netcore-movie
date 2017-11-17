@@ -50,7 +50,7 @@ namespace movie.Controllers
                 ViewBag.Message = user.FirstName+" registrado(a) com sucesso.";
             }
 
-            return View();
+            return RedirectToAction("Index");
         }
 
         [HttpPost]
@@ -58,13 +58,17 @@ namespace movie.Controllers
         {
             // var account = dbUsers.usuarios.Where(u => u.Username == user.Username && u.Password == user.Password).FirstOrDefault();
             
-            User account = null;
-            foreach(User item in usuarios){
-                if(item.Username == user.Username && item.Password == user.Password){
-                    account = item;
-                }
-            }
+            User account = new User();
+            account.UserID= user.UserID;
+            account.Username = user.Username;
+            account.Password = user.Password;
 
+            // foreach(User item in usuarios){
+            //     if(item.Username == user.Username && item.Password == user.Password){
+            //         account = item;
+            //     }
+            // }            
+            
             if (account != null)
             {
                 HttpContext.Session.SetString("UserID", account.UserID.ToString());
