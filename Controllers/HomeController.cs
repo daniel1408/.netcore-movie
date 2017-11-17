@@ -12,7 +12,8 @@ namespace movie.Controllers
 {
     public class HomeController : Controller
     {
-        DataBase dbUsers = new DataBase();
+        // DataBase dbUsers = new DataBase();
+        List<User> usuarios = new List<User>();
         
         public IActionResult Index()
         {
@@ -42,9 +43,10 @@ namespace movie.Controllers
         {
             if(ModelState.IsValid)
             {
-                dbUsers.usuarios.Add(user);
-                dbUsers.SaveChanges();
-                ModelState.Clear();
+                // dbUsers.usuarios.Add(user);
+                // dbUsers.SaveChanges();
+                // ModelState.Clear();
+                usuarios.Add(user);
                 ViewBag.Message = user.FirstName+" registrado(a) com sucesso.";
             }
 
@@ -54,7 +56,15 @@ namespace movie.Controllers
         [HttpPost]
         public ActionResult Login(User user)
         {
-            var account = dbUsers.usuarios.Where(u => u.Username == user.Username && u.Password == user.Password).FirstOrDefault();
+            // var account = dbUsers.usuarios.Where(u => u.Username == user.Username && u.Password == user.Password).FirstOrDefault();
+            
+            User account = null;
+            foreach(User item in usuarios){
+                if(item.Username == user.Username && item.Password == user.Password){
+                    account = item;
+                }
+            }
+
             if (account != null)
             {
                 HttpContext.Session.SetString("UserID", account.UserID.ToString());
