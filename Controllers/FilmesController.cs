@@ -27,12 +27,12 @@ namespace movie.Controllers
                 WebService s = new WebService();
                 List<Filmes> filmes = await s.GetMovies();
 
-                filmes = filmes.OrderBy(o => o.Title).ToList();
+                filmes = filmes.OrderByDescending(o => o.imdbRating).ToList();
                 return View(filmes);
             }
             else
             {
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Login", "Home");
             }
         }
 
@@ -53,7 +53,7 @@ namespace movie.Controllers
             }
             else
             {
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Login", "Home");
             }
         }
 
@@ -81,7 +81,7 @@ namespace movie.Controllers
             }
             else
             {
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Login", "Home");
             }
         }
 
@@ -93,7 +93,7 @@ namespace movie.Controllers
             }
             else
             {
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Login", "Home");
             }
         }
 
@@ -103,11 +103,11 @@ namespace movie.Controllers
             {
                 WebService s = new WebService();
                 Filmes filme = s.DeleteMovie(id);
-                return PartialView(filme);
+                return View(filme);
             }
             else
             {
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Login", "Home");
             }
         }
 
@@ -130,24 +130,7 @@ namespace movie.Controllers
             }
             else
             {
-                return RedirectToAction("Index", "Home");
-            }
-        }
-        
-        public async Task<ActionResult> Recomendations()
-        {
-            if (HttpContext.Session.GetString("UserID") != null)
-            {
-                WebService s = new WebService();
-                List<Filmes> filmes = null;
-                filmes = await s.Recomendation();
-                
-                return View(filmes);
-
-            }
-            else
-            {
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Login", "Home");
             }
         }
 
@@ -170,7 +153,7 @@ namespace movie.Controllers
             }
             else
             {
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Login", "Home");
             }
         }
 
@@ -193,7 +176,7 @@ namespace movie.Controllers
             }
             else
             {
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Login", "Home");
             }
         }
 

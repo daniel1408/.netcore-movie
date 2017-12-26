@@ -10,13 +10,12 @@
             <h4 style="text-align: center">Ordenados por nota do IMDB</h4>
             <hr>
             @foreach (var item in Model) {    
-                <div class="card" style="width: 20rem;">
-                    <div>
+                <div class="card" style="width: 17rem;">
+                    <div class="card-title">
                         @Html.DisplayFor(modelItem => item.Title)
-                    </div>
-                    
+                    </div>                    
                     <a href="#" data-value="@item.Id" class="btnInfo">
-                        <img class="card-img-top    " src="@Html.DisplayFor(modelItem => item.Poster)" alt="Card image cap">
+                        <img class="card-img-top" src="@Html.DisplayFor(modelItem => item.Poster)" alt="Card image cap">
                     </a>
                     <div>
                         <h4>IMDB: <b> @Html.DisplayFor(modelItem => item.imdbRating)</b></h4>
@@ -38,16 +37,3 @@
         </div>
     </div>
 </div>
-
-<div class="modal fade" id="removeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-body">
-                <div id="remove"></div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-

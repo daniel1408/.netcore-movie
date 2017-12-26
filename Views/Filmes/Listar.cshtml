@@ -1,5 +1,4 @@
-﻿@model IEnumerable<movie.Models.Filmes>
-    
+﻿@model IEnumerable<movie.Models.Filmes>  
 @{
     ViewBag.Title = "Listar";
 }
@@ -7,26 +6,37 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-12">
-            <h2 style="text-align: center"><b>Minha Lista</b></h2>
-
+            <h2 style="text-align: center; border:1px solid rgb(206, 206, 206);padding:5px; border-radius:10px"><b>Movie List</b></h2>
+            
             <a class="btn  my-btn" asp-controller="Filmes" asp-action="Adicionar"> 
                 Encontrar Novo Filme
             </a>
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-secondary" onclick="teste()">All</button>
+                <button type="button" class="btn btn-secondary" onclick="teste()">Ótimo</button>
+                <button type="button" class="btn btn-secondary" onclick="teste()">Bom</button>
+                <button type="button" class="btn btn-secondary">Regular</button>
+                <button type="button" class="btn btn-secondary">Ruim</button>
+            </div>
+
+            <script language="javascript" type="text/javascript">
+            function teste() {
+                alert("All");
+            }
+            </script>
 
             <hr>
-            @foreach (var item in Model) { 
-                <div class="card" style="width: 16.5rem;">
-                    <p>@Html.DisplayFor(modelItem => item.UserOption)</p>
-                    <a href="#" data-value="@item.Id" class="btnInfo"> 
+                @foreach (var item in Model) {
+                <div class="card" style="width: 13rem;">
+                    <div style="background-color: rgb(235, 235, 235); color: rgb(0, 0, 0);">
+                        <h5><b> @Html.DisplayFor(modelItem => item.UserOption)</b></h5>
+                    </div>
+                    <a href="#" data-value="@item.Id" class="btnInfo">
                         <img class="card-img-top" src="@Html.DisplayFor(modelItem => item.Poster)" alt="Card image cap">
                     </a>
-                    
-                    <div>
+                    <div style="margin: 5px; color:rgb(46, 46, 46);" >
                         <p class="card-title">@Html.DisplayFor(modelItem => item.Title)</p>
                     </div>
-                    <a href="#" data-value="@item.Id" class="btnRemove">
-                        Remover
-                    </a>
                 </div>
             }
         </div>
@@ -38,16 +48,6 @@
         <div class="modal-content">
             <div class="modal-body">
                 <div id="details"></div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade" id="removeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-body">
-                <div id="remove"></div>
             </div>
         </div>
     </div>

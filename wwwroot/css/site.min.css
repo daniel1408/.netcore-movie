@@ -1,3 +1,5 @@
+
+
 body{padding-top:50px;padding-bottom:20px}.body-content{padding-left:15px;padding-right:15px}.carousel-caption p{font-size:20px;line-height:1.4}.carousel-inner .item img[src$=".svg"]{width:100%}#qrCode{margin:15px}@media screen and (max-width:767px){.carousel-caption{display:none}}
 
 
@@ -64,14 +66,14 @@ footer{
 
 .card{
         display: inline-block;
-        border: 1px solid rgb(177, 177, 177);
+        border: 1px solid rgb(206, 206, 206);
         border-radius: 3px;
         margin: 1%;        
         text-align: center;
         color: black;
-        -webkit-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.74);
+        /* -webkit-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.74);
         -moz-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.74);
-        box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.74);
+        box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.74); */
 }
 
 
@@ -120,15 +122,16 @@ a.link {
 	-moz-transition: all 0.5s ease;
         -webkit-transition: all 0.5s ease;
         -o-transition: all 0.5s ease;
-        transition: all 1.7s ease;
+        transition: all 0.2s ease;
+        border: solid 1px rgb(194, 194, 194);
         
         font-size:1.0em;
 	background:rgb(44,62,80);
-	background-image: -moz-linear-gradient(50deg, rgb(121, 121, 121), rgb(255, 255, 255));
-        background-image: -webkit-linear-gradient(50deg, rgb(121, 121, 121), rgb(255, 255, 255));
-        background-image: -o-linear-gradient(50deg, rgb(121, 121, 121), rgb(255, 255, 255));
-        background-image: -ms-linear-gradient(50deg, rgb(121, 121, 121), rgb(255, 255, 255));
-        background-image: linear-gradient(50deg, rgb(121, 121, 121), rgb(255, 255, 255));
+	background-image: -moz-linear-gradient(50deg, rgb(206, 206, 206), rgb(255, 255, 255));
+        background-image: -webkit-linear-gradient(50deg, rgb(206, 206, 206), rgb(255, 255, 255));
+        background-image: -o-linear-gradient(50deg, rgb(206, 206, 206), rgb(255, 255, 255));
+        background-image: -ms-linear-gradient(50deg, rgb(206, 206, 206), rgb(255, 255, 255));
+        background-image: linear-gradient(50deg, rgb(206, 206, 206), rgb(255, 255, 255));
 	height:100%;
 	width:220px; 
 	position:fixed;
@@ -154,7 +157,6 @@ a.link {
 #menu li {
         padding:15%;
         margin:0 0 0 -35%;
-
 }
 
 #menu li a, #menu li a:link {
@@ -168,20 +170,10 @@ a.link {
         transition: all 1.2s ease;
 }
 
-/* #menu li a:hover {
-        color:rgb(255,255,255);
-        background-color:rgba(255,255,255,0.2);
-        -moz-transition: all 0.5s ease;
-        -webkit-transition: all 0.5s ease;
-        -o-transition: all 0.5s ease;
-        transition: all 0.5s ease;
-} */
-
-
 .card-title{
-        font-size:12px;
-        color: rgb(0, 0, 0);
-        display: inline
+        font-size:11px;
+        display: inline;
+        color: black;
 }
 
 
@@ -195,3 +187,13 @@ a.link {
         color: rgb(255, 255, 255);
 }
 
+fieldset { 
+        display: block;
+        margin-left: 2px;
+        margin-right: 2px;
+        padding-top: 0.35em;
+        padding-bottom: 0.625em;
+        padding-left: 0.75em;
+        padding-right: 0.75em;
+        border: 2px groove (internal value);
+    }

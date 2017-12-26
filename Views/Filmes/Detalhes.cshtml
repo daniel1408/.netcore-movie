@@ -12,7 +12,7 @@
             <span aria-hidden="true">&times;</span>
         </div>
 
-        <h3 style="text-align:center"><b>@Html.DisplayFor(model => model.Title)</b> (@Html.DisplayFor(model => model.Year))</h3>
+        <h3 style="text-align:center; background-color:rgb(8, 14, 20); width:90%; color:white; border-radius:10px; margin: 10px auto"><b>@Html.DisplayFor(model => model.Title)</b> (@Html.DisplayFor(model => model.Year))</h3>
         <hr>
     </div>
 
@@ -58,18 +58,10 @@
                 <p>
                     <b>Prêmiações:</b> @Html.DisplayFor(model => model.Awards)
                 </p>
-
             </div>
         </div>
     </div>
-</div>
-
-<div class="modal fade" id="modalDelete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-body">
-                <div id="delete"></div>
-            </div>
-        </div>
-    </div>
+    <a href="Deletar/@Html.DisplayFor(model => model.Id)" class="btn btn-block my-btn" style="width:48%">
+        Remover
+    </a>
 </div>

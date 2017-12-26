@@ -30,12 +30,12 @@ namespace movie.Controllers
 
         public IActionResult Login()
         {
-            return PartialView();
+            return View();
         }
 
         public IActionResult Sing()
         {
-            return PartialView();
+            return View();
         }
 
         [HttpPost]
@@ -85,7 +85,7 @@ namespace movie.Controllers
         public ActionResult Logout()
         {
             HttpContext.Session.Clear();
-            return RedirectToAction("Index");
+            return RedirectToAction("Login");
         }
 
         public IActionResult About()

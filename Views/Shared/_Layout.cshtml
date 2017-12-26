@@ -36,27 +36,22 @@
                                 {
                                     <li>
                                         <a asp-controller="Filmes" asp-action="Listar">
-                                            Meus Filmes
+                                            My List
                                         </a>
                                     </li>
                                     <li>
                                         <a asp-controller="Filmes" asp-action="Ranking">
-                                            Meu Top 10
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a asp-controller="Filmes" asp-action="Recomendations">
-                                            Recomendações
+                                            Top Ten
                                         </a>
                                     </li>
                                     <li>
                                         <a asp-controller="Filmes" asp-action="NaoVistos">
-                                            Não vistos
+                                            Unseen
                                         </a>
                                     </li>
                                     <li>
                                         <a asp-controller="Filmes" asp-action="Vistos">
-                                            Vistos
+                                            Watched
                                         </a>
                                     </li>
 
@@ -64,12 +59,12 @@
                                 
                                     <li>
                                         <a asp-controller="Home" asp-action="About">
-                                            Sobre o Site
+                                            About
                                         </a>
                                     </li>
                                     <li>
                                         <a asp-controller="Home" asp-action="Contact">
-                                            Contatos
+                                            Contacts
                                         </a>
                                     </li>
                             </ul>
@@ -88,7 +83,6 @@
             <div class="container-fluid">
                 
                 <div style=" width: 10%; position:relative; float:left">
-                    
                     <a href="" id="iconMenu" style="margin-left:30%">
                         <img src="http://www.piratebrands.com/images/menu.png" width="50px">
                     </a>
@@ -96,13 +90,18 @@
 
                 
                 <div class="navbar-collapse collapse" style=" width:80%; position:relative;float:right"> 
-                    <div class="campo-busca" style="margin-left: 23%">
-                        <form>
-                            <input class="form-control mr-sm-2 " type="text" placeholder="Qual filme deseja encontrar hoje?" aria-label="Search">
-                            <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
-                        </form>
-                    </div>
-
+                    @if (Context.Session.GetString("UserID") != null)
+                    {
+                        <div class="campo-busca" style="margin-left: 23%">
+                            <form>
+                                <input class="form-control mr-sm-2 " type="text" placeholder="Qual filme deseja encontrar hoje?" aria-label="Search">
+                            </form>
+                        </div>
+                    }else{
+                        <div class="campo-busca" style="margin-left: 23%">
+                            <label style="font-size:25px; margin-left:30%; color:white">Movie Managment</label>
+                        </div>
+                    }
 
                     <ul class="nav navbar-nav" style="position:relative; float:right;">
                         @if (Context.Session.GetString("UserID") != null)
@@ -112,13 +111,13 @@
                         else
                         {
                             <li>
-                                <a href="#" class="btnLogin">
+                                <a asp-controller="Home" asp-action="Login">
                                 <!-- <a asp-area="" asp-controller="Home" asp-action="Login"> -->
                                     Entrar
                                 </a>
                             </li>
                             <li>
-                                <a href="#" class="btnSing">
+                                <a asp-controller="Home" asp-action="Sign">
                                 <!-- <a asp-area="" asp-controller="Home" asp-action="Sing"> -->
                                     Criar Conta
                                 </a>
@@ -152,32 +151,4 @@
         </environment>
 
     </body>
-    
-    <footer class="container-fluid" style="margin-left:10%">
-        <hr />
-        <h2><b>Movie Management</b></h2>
-        <p>&copy; @DateTime.Now.Year - daniel-costa@ufu.br</p>
-    </footer>
 </html>
-
-
-
-<div class="modal fade" id="modalSing" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-body">
-                <div id="sing"></div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-body">
-                <div id="login"></div>
-            </div>
-        </div>
-    </div>
-</div>

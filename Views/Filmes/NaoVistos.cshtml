@@ -16,18 +16,15 @@
             <hr>
             @foreach (var item in Model) { 
                 <div class="card" style="width: 12.5rem;">
-
-                    <a href="#" data-value="@item.Id" class="btnInfo"> 
-                        <img class="card-img-top" src="@Html.DisplayFor(modelItem => item.Poster)" alt="Card image cap">
-                    </a>
-                    
                     <div>
                         <p class="card-title">@Html.DisplayFor(modelItem => item.Title)</p>
                     </div>
+                    <a href="#" data-value="@item.Id" class="btnInfo"> 
+                        <img class="card-img-top" src="@Html.DisplayFor(modelItem => item.Poster)" alt="Card image cap">
+                    </a>
                     <div>
                         <h6>IMDB: <b> @Html.DisplayFor(modelItem => item.imdbRating)</b></h6>
                     </div>                    
-                    
                 </div>
             }
         </div>

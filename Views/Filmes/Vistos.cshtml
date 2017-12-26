@@ -12,14 +12,12 @@
             <hr>
             @foreach (var item in Model) { 
                 <div class="card" style="width: 12.5rem;">         
-
-                    <a href="#" data-value="@item.Id" class="btnInfo"> 
-                        <img class="card-img-top" src="@Html.DisplayFor(modelItem => item.Poster)" alt="Card image cap">
-                    </a>
-                    
                     <div>
                         <p class="card-title">@Html.DisplayFor(modelItem => item.Title)</p>
                     </div>
+                    <a href="#" data-value="@item.Id" class="btnInfo"> 
+                        <img class="card-img-top" src="@Html.DisplayFor(modelItem => item.Poster)" alt="Card image cap">
+                    </a>
                     <div>
                         <h6>IMDB: <b> @Html.DisplayFor(modelItem => item.imdbRating)</b></h6>
                     </div>                    
@@ -35,16 +33,6 @@
         <div class="modal-content">
             <div class="modal-body">
                 <div id="details"></div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade" id="removeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-body">
-                <div id="remove"></div>
             </div>
         </div>
     </div>

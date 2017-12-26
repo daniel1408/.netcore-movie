@@ -18,7 +18,7 @@ namespace movie.Service
     public class WebService
     {
         string OmdbBaseURL = "http://www.omdbapi.com/";
-        string ApiMovieURL = "http://api-movie.azurewebsites.net/";
+        string ApiMovieURL = "http://localhost:5050/";
 
         public async Task<List<Filmes>> GetMovies()
         {            
@@ -86,7 +86,7 @@ namespace movie.Service
             client.DefaultRequestHeaders.Clear();                  
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));  
 
-            var req = new HttpRequestMessage(HttpMethod.Post, "http://api-movie.azurewebsites.net/api/movie");
+            var req = new HttpRequestMessage(HttpMethod.Post, "http://localhost:5050/api/movie");
             var reqBody = JsonConvert.SerializeObject(movie);
             
             req.Content = new StringContent(reqBody, Encoding.UTF8, "application/json");
@@ -100,7 +100,7 @@ namespace movie.Service
             Filmes filme = new Filmes();
             using (var client = new HttpClient())    
             {    
-                client.BaseAddress = new Uri("http://api-movie.azurewebsites.net/");    
+                client.BaseAddress = new Uri("http://localhost:5050/");    
                 HttpResponseMessage Res = client.DeleteAsync($"api/movie/{id}").Result;    
                 
                 if (Res.IsSuccessStatusCode)
